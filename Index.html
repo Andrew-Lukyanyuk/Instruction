@@ -6,12 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
-#link{cursor:pointer;color:blue;}
+ #link { cursor:pointer; color:blue;}
 #tip1,#tip121,#tip131,#tip141,#tip151,#tip1611,#tip16111{background-color:lightyellow; width:50%;}
 #tip132{background-color:transparent;}
 </style>
+
 </head>
-<body>
+<body link="#ffcc00" vlink="#cecece" alink="#ff0000" bgcolor="black">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -20,7 +21,7 @@
 <p>Лінк в біллінг | Прізвище | Дані відсутні</p>
 <hr>
 <p>Вислухати звернення абонента</p>
-<p> <a onclick="Help1()" id="link">Відсутність зв'язку</a> |<a onclick="HelpLoSpeed()" id="link"> Низька швидкість </a>| <a onclick="Help3()" id="link">Інше</a></p>
+<p> <a onclick="Help1()" id="link" href="#">Відсутність зв'язку</a> |<a onclick="HelpLoSpeed()" id="link"> Низька швидкість </a>| <a onclick="Help3()" id="link">Інше</a></p>
 <p id="tip1"></p>
 <p id="tip2"></p>
 <p id="tip121"></p>
@@ -61,7 +62,7 @@ function Help1(txt){
 function Help121(txt){document.getElementById('tip121').innerHTML='Перевірити стан підключення<p id=tip121><a onClick="Help131()" id=link>Онлайн</a> | <a onClick="Help132()" id=link>Сесія завершена</a> | Нема даних</p>';}
 	// --------------------------------------Низька швидкість-------------------------------------------
 function HelpLoSpeed(txt){
-	document.getElementById('tip1').innerHTML='На основі MAC-адреси останнього підключення визначити наявність роутера <p> <a onClick="HelpLoSpeedRouter()" id=link>Роутер є</a> | Роутера немає </p> ';
+	document.getElementById('tip1').innerHTML='На основі MAC-адреси останнього підключення визначити наявність роутера <p> <a onClick="HelpLoSpeedRouter()" id=link>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()" id=link> Нема роутера</a></p> ';
 	document.getElementById('tip2').innerHTML='';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
@@ -77,13 +78,27 @@ function HelpLoSpeed(txt){
 function HelpLoSpeedRouter(txt){	
 	document.getElementById('tip2').innerHTML=' Попросити абонента : ';
 	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
-	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"';
+	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<p><img src="Rapid.jpg"></p>';
 	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Agrocom.exe';
 	document.getElementById('tip141').innerHTML='4 Переставити кабель з WAN-порта роутера в мережеву карту комп\'ютера';
 	document.getElementById('tip151').innerHTML = '5 Запустити на виконання Agrocom.exe та виконати вказівки до налаштувань, які там запропоновані ';
 	document.getElementById('tip161').innerHTML='6 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
 	document.getElementById('tip1611').innerHTML = '7 Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості';
 	document.getElementById('tip16111').innerHTML = '8 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+}
+
+function HelpLoSpeedNoRouter(txt){	
+	document.getElementById('tip2').innerHTML=' Попросити абонента : ';
+	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
+	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<p><img src="Rapid.jpg"></p>';
+	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Agrocom.exe';
+	document.getElementById('tip141').innerHTML='4 Запустити на виконання Agrocom.exe та виконати вказівки до налаштувань, які там запропоновані';
+	document.getElementById('tip151').innerHTML = '5 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
+	document.getElementById('tip161').innerHTML='6 Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості';
+	document.getElementById('tip1611').innerHTML = '7 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
+	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
 }
@@ -111,7 +126,7 @@ function Help1321(txt){
 	document.getElementById('tip181').innerHTML = '';
 }
 function Help1331(txt){
-	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p id=tip141> <a onClick="Help1341()" id=link>Роутер є</a> | <a onClick="Help1342()" id=link>Роутера немає</a> </p>';
+	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p id=tip141> <a onClick="Help1341()" id=link>Роутер є</a> | <a onClick="Help1342()" id=link>Нема роутера</a> </p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 }
@@ -136,7 +151,7 @@ function Help1322(txt){
 	document.getElementById('tip181').innerHTML = '';
 }
 function Help13221(txt){
-	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13231()" id=link>Роутер є</a> |<a onClick="Help13232()" id=link> Роутера немає</a> </p>';
+	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13231()" id=link>Роутер є</a> |<a onClick="Help13232()" id=link> Нема роутера</a> </p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';	
@@ -154,7 +169,7 @@ function Help13222(txt){
 	document.getElementById('tip1611').innerHTML = '';	
 }
 function Help13223(txt){
-	document.getElementById('tip151').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13224()" id=link>Роутер є</a> | <a onClick="Help13225()" id=link> Роутера немає</a></p>';
+	document.getElementById('tip151').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13224()" id=link>Роутер є</a> | <a onClick="Help13225()" id=link> Нема роутера</a></p>';
 }
 function Help13224(txt){
 	document.getElementById('tip161').innerHTML='Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера';
@@ -184,7 +199,7 @@ function HelpNoLink(txt){
 	document.getElementById('tip161').innerHTML = '';
 }
 function HelpSwitch(txt){
-	document.getElementById('tip132').innerHTML='Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>непрацює, то перезапустити<p><a onClick="HelpPortWork()" id=link> Порт запрацював </a>|<a onClick="HelpPortNotwrk()" id=link> Не запрацював </a></p>';
+	document.getElementById('tip132').innerHTML='Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>непрацює, то перезапустити<p><a onClick="HelpPortWork()" id=link> Порт працює </a>|<a onClick="HelpPortNotwrk()" id=link> Порт непрацює </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
@@ -195,7 +210,7 @@ function HelpPortNotwrk(txt){
 	document.getElementById('tip161').innerHTML = '';
 }
 function HelpPortWork(txt){
-	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера<p><a onClick="HelpRouter()" id=link> Роутер є </a>|<a onClick="HelpNoRouter()" id=link> Роутера немає </a></p>';
+	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера<p><a onClick="HelpRouter()" id=link> Роутер є </a>|<a onClick="HelpNoRouter()" id=link> Нема роутера</a></p>';
 	document.getElementById('tip151').innerHTML='';
 }
 function HelpRouter(txt){
@@ -243,7 +258,7 @@ function Help142(txt) { document.getElementById('tip141').innerHTML = 'Пере�
 
 	//Ethernet
 function Help154(txt) {
-	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p> <a onClick="Help164()" id=link>Роутер є</a> | <a onClick="Help1643()" id=link>Роутера нема</a></p>';
+	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p> <a onClick="Help164()" id=link>Роутер є</a> | <a onClick="Help1643()" id=link>Нема роутера</a></p>';
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15111').innerHTML = '';
 	document.getElementById('tip161').innerHTML = '';
@@ -289,7 +304,7 @@ function Help153(txt) {
 
 	//FTTH
 function Help152(txt) {
-	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p><a onClick="Help162()" id=link>Роутер є</a> | <a onClick="Help1621()" id=link>Роутера нема</a></p>'; 
+	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p><a onClick="Help162()" id=link>Роутер є</a> | <a onClick="Help1621()" id=link>Нема роутера</a></p>'; 
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15111').innerHTML = '';
 	document.getElementById('tip161').innerHTML = '';
@@ -313,7 +328,7 @@ function Help152(txt) {
 
 	//PON
 function Help151(txt){
-	document.getElementById('tip151').innerHTML='За останньою МАС-адресою визначити наявність роутера<p><a onClick="Help161()" id=link>Роутер є</a> | <a onClick="Help1611()" id=link>Роутера нема</a></p>';
+	document.getElementById('tip151').innerHTML='За останньою МАС-адресою визначити наявність роутера<p><a onClick="Help161()" id=link>Роутер є</a> | <a onClick="Help1611()" id=link>Нема роутера</a></p>';
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15112').innerHTML = '';
 	document.getElementById('tip15111').innerHTML = '';
