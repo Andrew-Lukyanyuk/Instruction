@@ -4,46 +4,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
 <title>Інтерактивна інструкція</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
 <style>
- #link { cursor:pointer; color:blue;}
+ #link11, #link12, #link13, #link21, #link22, #link23, #link24, #link31, #link32, #link41, #link42, #link43, #link44, #link45, #link46, #link51, #link52, #link53, #link54, #link55, #link56, #link57, #link58, #link59, #link5A, #link5B, #link5C, #link61, #link62, #link63, #link64, #link65, #link66, #link67, #link68, #link69, #link6A, #link6B, #link6C, #link6D, #link6E, #link6F, #link6G, #link71, #link72, #link73, #link74, #link75, #link76, #link77, #link78, #link79, #link7A, #link7B, #link7C, #link7D, #link7E, #link81, #link82, #link83, #link84, #link91, #link92 { cursor:pointer; color:blue;}
 #tip1,#tip121,#tip131,#tip141,#tip151,#tip1611,#tip16111{background-color:lightyellow; width:50%;}
 #tip132{background-color:transparent;}
 </style>
 </head>
 <body>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <center>
 <p>Перевірити дані клієнта</p>
 <p>Лінк в біллінг | Прізвище | Дані відсутні</p>
 <hr>
 <p>Вислухати звернення абонента</p>
-<p> <a onclick="Help1()" id="link">Відсутність зв'язку</a> |<a onclick="HelpLoSpeed()" id="link"> Низька швидкість </a>| <a onclick="Help3()" id="link">Інше</a></p>
-<p id="tip1"></p>
-<p id="tip2"></p>
-<p id="tip121"></p>
-<p id="tip131"></p>
-<p id="tip132"></p>
-<p id="tip141"></p>
-<p id="tip142"></p>
-<p id="tip151"></p>
-<p id="tip1511"></p>
-<p id="tip15111"></p>
-<p id="tip15112"></p>
-<p id="tip161"></p>
-<p id="tip1611"></p>
-<p id="tip16111"></p>
-<p id="tip171"></p>
-<p id="tip181"></p>
+<p> <a onclick="Help1()" id="link11">Відсутність зв'язку</a> |<a onclick="HelpLoSpeed()" id="link12"> Низька швидкість </a>| <a onclick="Help3()" id="link13">Інше</a></p>
+
+<p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tip132"></p> <p id="tip141"></p> <p id="tip142"></p> <p id="tip151"></p>
+<p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p>
 </center>
+
+
 <script language="JavaScript">
-// Todo: 1) видалити нумерацію біля фраз "Перевірити наявність віддаленого доступу" Done
+
+// link33 зарезервовано за "нема даних" та не додано в стайли
+
+
+var RED="red";
 
 function Help1(txt){
 	document.getElementById('tip1').innerHTML='Перевірити стан рахунку';
-	document.getElementById('tip2').innerHTML='<a onClick="Help121()" id=link>Є кошти</a> | <a onClick="Help122()" id=link>Нема коштів</a>';
+	document.getElementById('tip2').innerHTML='<a onClick="Help121()" id=link21>Є кошти</a> | <a onClick="Help122()" id=link22>Нема коштів</a>';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
 	document.getElementById('tip132').innerHTML='';
@@ -57,22 +51,32 @@ function Help1(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link11").style.color = "RED";
+	document.getElementById("link12").style.color = "";
+	document.getElementById("link13").style.color = "";
 }
-function Help121(txt){document.getElementById('tip121').innerHTML='Перевірити стан підключення<p id=tip121><a onClick="Help131()" id=link>Онлайн</a> | <a onClick="Help132()" id=link>Сесія завершена</a> | Нема даних</p>';}
+function Help121(txt){document.getElementById('tip121').innerHTML='Перевірити стан підключення<p id=tip121><a onClick="Help131()" id=link31>Онлайн</a> | <a onClick="Help132()" id=link32>Сесія завершена</a> | Нема даних</p>';
+	document.getElementById("link21").style.color = "RED";
+	document.getElementById("link22").style.color = "";
+}
 	// --------------------------------------Низька швидкість-------------------------------------------
 function HelpLoSpeed(txt){
-	document.getElementById('tip1').innerHTML='На основі MAC-адреси останнього підключення визначити наявність роутера <p> <a onClick="HelpLoSpeedRouter()" id=link>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()" id=link> Нема роутера</a></p> ';
+	document.getElementById('tip1').innerHTML='На основі MAC-адреси останнього підключення визначити наявність роутера <p> <a onClick="HelpLoSpeedRouter()" id=link23>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()" id=link24> Нема роутера</a></p> ';
 	document.getElementById('tip2').innerHTML='';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link11").style.color = "";
+	document.getElementById("link12").style.color = "RED";
+	document.getElementById("link13").style.color = "";
 }
 function HelpLoSpeedRouter(txt){	
 	document.getElementById('tip2').innerHTML=' Попросити абонента : ';
@@ -86,6 +90,8 @@ function HelpLoSpeedRouter(txt){
 	document.getElementById('tip16111').innerHTML = '8 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link23").style.color = "RED";
+	document.getElementById("link24").style.color = "";
 }
 
 function HelpLoSpeedNoRouter(txt){	
@@ -100,22 +106,28 @@ function HelpLoSpeedNoRouter(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link23").style.color = "";
+	document.getElementById("link24").style.color = "RED";
 }
 	// --------------------------------------Сесія завершена-------------------------------------------
 	
 function Help132(txt){
-	document.getElementById('tip131').innerHTML='Скопіювати МАС-адресу останнього підключення, вставити її в пошук програми Userside<br> та з\'ясувати спосіб підключення<p><img src="MAC.png"></p><p><img src="Userside.png"></p> <p id=tip131, align="center"><a onClick="Help1321()" id=link>ОЛТ через PON-порт</a> |<a onClick="Help1322()" id=link> G-порт </a>|<a onClick="HelpbaseRadio()" id=link> Базова радіостанція </a>|<a onClick="HelpSwitch()" id=link> Switch </a></p>';
+	document.getElementById('tip131').innerHTML='Скопіювати МАС-адресу останнього підключення, вставити її в пошук програми Userside<br> та з\'ясувати спосіб підключення<p><img src="MAC.png"></p><p><img src="Userside.png"></p> <p id=tip131, align="center"><a onClick="Help1321()" id=link43>ОЛТ через PON-порт</a> |<a onClick="Help1322()" id=link44> G-порт </a>|<a onClick="HelpbaseRadio()" id=link45> Базова радіостанція </a>|<a onClick="HelpSwitch()" id=link46> Switch </a></p>';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link31").style.color = "";
+	document.getElementById("link32").style.color = "RED";
+	document.getElementById("link33").style.color = "";
 }
 function Help1321(txt){
-	document.getElementById('tip132').innerHTML='В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці<br>до конкретного абонента <p id=tip131><a onClick="Help1331()" id=link> Лінк є </a>| <a onClick="Help1332()" id=link>Лінку немає </a></p>';
+	document.getElementById('tip132').innerHTML='В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці<br>до конкретного абонента <p id=tip131><a onClick="Help1331()" id=link55> Лінк є </a>| <a onClick="Help1332()" id=link56>Лінку немає </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
@@ -123,24 +135,36 @@ function Help1321(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link43").style.color = "RED";
+	document.getElementById("link44").style.color = "";
+	document.getElementById("link45").style.color = "";
+	document.getElementById("link46").style.color = "";
 }
 function Help1331(txt){
-	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p id=tip141> <a onClick="Help1341()" id=link>Роутер є</a> | <a onClick="Help1342()" id=link>Нема роутера</a> </p>';
+	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p id=tip141> <a onClick="Help1341()" id=link69>Роутер є</a> | <a onClick="Help1342()" id=link6A>Нема роутера</a> </p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link55").style.color = "RED";
+	document.getElementById("link56").style.color = "";
 }
 function Help1341(txt){
 	document.getElementById('tip151').innerHTML='Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера';
+	document.getElementById("link69").style.color = "RED";
+	document.getElementById("link6A").style.color = "";
 }
 function Help1342(txt){
 	document.getElementById('tip151').innerHTML='Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного встановлення PPPoE';
+	document.getElementById("link69").style.color = "";
+	document.getElementById("link6A").style.color = "RED";
 }
 function Help1332(txt){
 	document.getElementById('tip141').innerHTML='Зареєструвати заявку та передати відповідальній особі';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link55").style.color = "";
+	document.getElementById("link56").style.color = "RED";
 }
 function Help1322(txt){
-	document.getElementById('tip132').innerHTML='<a onClick="Help13222()" id=link>Ще один ОЛТ(PON)</a> | <a onClick="Help13221()" id=link>Медіаконвертер</a>';
+	document.getElementById('tip132').innerHTML='<a onClick="Help13222()" id=link57>Ще один ОЛТ(PON)</a> | <a onClick="Help13221()" id=link58>Медіаконвертер</a>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
@@ -148,75 +172,115 @@ function Help1322(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link43").style.color = "";
+	document.getElementById("link44").style.color = "RED";
+	document.getElementById("link45").style.color = "";
+	document.getElementById("link46").style.color = "";
 }
 function Help13221(txt){
-	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13231()" id=link>Роутер є</a> |<a onClick="Help13232()" id=link> Нема роутера</a> </p>';
+	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13231()" id=link6D>Роутер є</a> |<a onClick="Help13232()" id=link6E> Нема роутера</a> </p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
-	document.getElementById('tip1611').innerHTML = '';	
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById("link57").style.color = "";
+	document.getElementById("link58").style.color = "RED";		
 }
 function Help13231(txt){
 	document.getElementById('tip151').innerHTML='Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера';
+	document.getElementById("link6D").style.color = "RED";
+	document.getElementById("link6E").style.color = "";	
 }
 function Help13232(txt){
 	document.getElementById('tip151').innerHTML='Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного встановлення PPPoE';
+	document.getElementById("link6D").style.color = "";
+	document.getElementById("link6E").style.color = "RED";	
 }
 function Help13222(txt){
-	document.getElementById('tip141').innerHTML='В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці до конкретного абонента <p><a onClick="Help13223()" id=link>Лінк є</a> | <a onClick="Help13233()" id=link>Лінку немає </a></p>';
+	document.getElementById('tip141').innerHTML='В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці до конкретного абонента <p><a onClick="Help13223()" id=link6B>Лінк є</a> | <a onClick="Help13233()" id=link6C>Лінку немає </a></p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
-	document.getElementById('tip1611').innerHTML = '';	
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById("link57").style.color = "RED";
+	document.getElementById("link58").style.color = "";	
 }
 function Help13223(txt){
-	document.getElementById('tip151').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13224()" id=link>Роутер є</a> | <a onClick="Help13225()" id=link> Нема роутера</a></p>';
+	document.getElementById('tip151').innerHTML='На основі MAC-адреси визначити наявність роутера <p> <a onClick="Help13224()" id=link7D>Роутер є</a> | <a onClick="Help13225()" id=link7E> Нема роутера</a></p>';
+	document.getElementById("link6B").style.color = "RED";
+	document.getElementById("link6C").style.color = "";	
 }
 function Help13224(txt){
 	document.getElementById('tip161').innerHTML='Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера';
+	document.getElementById("link7D").style.color = "RED";
+	document.getElementById("link7E").style.color = "";	
 }
 function Help13225(txt){
 	document.getElementById('tip161').innerHTML='Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE';
+	document.getElementById("link7D").style.color = "";
+	document.getElementById("link7E").style.color = "RED";	
 }
 function Help13233(txt){
 	document.getElementById('tip151').innerHTML='Зареєструвати заявку та передати відповідальній особі';
 	document.getElementById('tip161').innerHTML = '';
-	document.getElementById('tip1611').innerHTML = '';	
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById("link6B").style.color = "";
+	document.getElementById("link6C").style.color = "RED";	
 }
 function HelpbaseRadio(txt){
-	document.getElementById('tip132').innerHTML='Віддалено зайти на базову станцію радіообладнання, прервірити налаштування та при<br>потребі відновити їх. Перевірити наявність радіолінку до абонента <p><a onClick="HelpLink()" id=link> Лінк є </a>|<a onClick="HelpNoLink()" id=link> Лінку немає </a></p>';
+	document.getElementById('tip132').innerHTML='Віддалено зайти на базову станцію радіообладнання, прервірити налаштування та при<br>потребі відновити їх. Перевірити наявність радіолінку до абонента <p><a onClick="HelpLink()" id=link59> Лінк є </a>|<a onClick="HelpNoLink()" id=link5A> Лінку немає </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link43").style.color = "";
+	document.getElementById("link44").style.color = "";
+	document.getElementById("link45").style.color = "RED";
+	document.getElementById("link46").style.color = "";
 }
 function HelpLink(txt){
 	document.getElementById('tip141').innerHTML='Віддалено зайти на антену клієнта та налаштувати PPPoE';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link59").style.color = "RED";
+	document.getElementById("link5A").style.color = "";
 }
 function HelpNoLink(txt){
 	document.getElementById('tip141').innerHTML='Зареєструвати заявку на відновлення зв\'язку та передати відповідальній особі';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link59").style.color = "";
+	document.getElementById("link5A").style.color = "RED";
 }
 function HelpSwitch(txt){
-	document.getElementById('tip132').innerHTML='Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>непрацює, то перезапустити<p><a onClick="HelpPortWork()" id=link> Порт працює </a>|<a onClick="HelpPortNotwrk()" id=link> Порт непрацює </a></p>';
+	document.getElementById('tip132').innerHTML='Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>непрацює, то перезапустити<p><a onClick="HelpPortWork()" id=link5B> Порт працює </a>|<a onClick="HelpPortNotwrk()" id=link5C> Порт непрацює </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link43").style.color = "";
+	document.getElementById("link44").style.color = "";
+	document.getElementById("link45").style.color = "";
+	document.getElementById("link46").style.color = "RED";
 }
 function HelpPortNotwrk(txt){
 	document.getElementById('tip141').innerHTML='Зареєструвати заявку та передати інженеру другого рівня';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link5B").style.color = "";
+	document.getElementById("link5C").style.color = "RED";
 }
 function HelpPortWork(txt){
-	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера<p><a onClick="HelpRouter()" id=link> Роутер є </a>|<a onClick="HelpNoRouter()" id=link> Нема роутера</a></p>';
+	document.getElementById('tip141').innerHTML='На основі MAC-адреси визначити наявність роутера<p><a onClick="HelpRouter()" id=link6F> Роутер є </a>|<a onClick="HelpNoRouter()" id=link6G> Нема роутера</a></p>';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link5B").style.color = "RED";
+	document.getElementById("link5C").style.color = "";
 }
 function HelpRouter(txt){
 	document.getElementById('tip151').innerHTML='Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера';
+	document.getElementById("link6F").style.color = "RED";
+	document.getElementById("link6G").style.color = "";
 }
 function HelpNoRouter(txt){
 	document.getElementById('tip151').innerHTML='Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE';
+	document.getElementById("link6F").style.color = "";
+	document.getElementById("link6G").style.color = "RED";
 }
 //--------------------------------------------------------------------------------------------------------
 function Help122(txt){
@@ -225,21 +289,28 @@ function Help122(txt){
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link21").style.color = "";
+	document.getElementById("link22").style.color = "RED";
 }
-function Help131(txt){document.getElementById('tip131').innerHTML='Повідомити абонента, що він на звя\'зку і отримати підтвердження<p><a onClick="Help141()" id=link>На зв\'язку</a> | <a onClick="Help142()" id=link>Не на зв\'язку</a></p>';
+function Help131(txt){document.getElementById('tip131').innerHTML='Повідомити абонента, що він на звя\'зку і отримати підтвердження<p><a onClick="Help141()" id=link41>На зв\'язку</a> | <a onClick="Help142()" id=link42>Не на зв\'язку</a></p>';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link31").style.color = "RED";
+	document.getElementById("link32").style.color = "";
+	document.getElementById("link33").style.color = "";
 }
 function Help141(txt){
 	document.getElementById('tip141').innerHTML='Подякувати і попрощатись';
@@ -252,12 +323,17 @@ function Help141(txt){
 	document.getElementById('tip16111').innerHTML='';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML='';
+	document.getElementById("link41").style.color = "RED";
+	document.getElementById("link42").style.color = "";
 }
-function Help142(txt) { document.getElementById('tip141').innerHTML = 'Перевірити тип підключення<p id=tip142><a onClick="Help151()" id=link>PON</a> | <a onClick="Help152()" id=link>FTTH</a> | <a onClick="Help153()" id=link>Radio</a> | <a onClick="Help154()" id=link>Ethernet</a></p>'; }
+function Help142(txt) { document.getElementById('tip141').innerHTML = 'Перевірити тип підключення<p id=tip142><a onClick="Help151()" id=link51>PON</a> | <a onClick="Help152()" id=link52>FTTH</a> | <a onClick="Help153()" id=link53>Radio</a> | <a onClick="Help154()" id=link54>Ethernet</a></p>';
+	document.getElementById("link41").style.color = "";
+	document.getElementById("link42").style.color = "RED";
+ }
 
 	//Ethernet
 function Help154(txt) {
-	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p> <a onClick="Help164()" id=link>Роутер є</a> | <a onClick="Help1643()" id=link>Нема роутера</a></p>';
+	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p> <a onClick="Help164()" id=link67>Роутер є</a> | <a onClick="Help1643()" id=link68>Нема роутера</a></p>';
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15111').innerHTML = '';
 	document.getElementById('tip161').innerHTML = '';
@@ -265,31 +341,58 @@ function Help154(txt) {
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML = '';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link51").style.color = "";
+	document.getElementById("link52").style.color = "";
+	document.getElementById("link53").style.color = "";
+	document.getElementById("link54").style.color = "RED";
 }
 function Help164(txt) {
-	document.getElementById('tip1511').innerHTML = 'Перевірити наявність віддаленого доступу <p> <a onClick="Help1641()" id=link>Доступ є</a> | <a onClick="Help1642()" id=link>Доступу немає</a> </p>';
+	document.getElementById('tip1511').innerHTML = 'Перевірити наявність віддаленого доступу <p> <a onClick="Help1641()" id=link79>Доступ є</a> | <a onClick="Help1642()" id=link7A>Доступу немає</a> </p>';
+	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML = '';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link67").style.color = "RED";
+	document.getElementById("link68").style.color = "";
 }
-function Help1641(txt) { document.getElementById('tip161').innerHTML = 'Здійснити віддалене налаштування внутрішньої мережі'; }
-function Help1642(txt) { document.getElementById('tip161').innerHTML = 'Попросити абонента переставити кабель в LAN-порт, здійснити віддалене підключення та налаштувати роутер внутрішньої мережі'; }
+function Help1641(txt) { document.getElementById('tip161').innerHTML = 'Здійснити віддалене налаштування внутрішньої мережі';
+	document.getElementById("link79").style.color = "RED";
+	document.getElementById("link7A").style.color = "";
+}
+function Help1642(txt) { document.getElementById('tip161').innerHTML = 'Попросити абонента переставити кабель в LAN-порт, здійснити віддалене підключення та налаштувати роутер внутрішньої мережі';
+	document.getElementById("link79").style.color = "";
+	document.getElementById("link7A").style.color = "RED";
+}
 function Help1643(txt) {
-	document.getElementById('tip1611').innerHTML = 'Попросити абонента відключити VPN та PROXY <p> <a onClick="Help16431()" id=link>Допомогло</a> | <a onClick="Help16432()" id=link>Не допомогло</a> </p>';
+	document.getElementById('tip1611').innerHTML = 'Попросити абонента відключити VPN та PROXY <p> <a onClick="Help16431()" id=link7B>Допомогло</a> | <a onClick="Help16432()" id=link7C>Не допомогло</a> </p>';
 	document.getElementById('tip1511').innerHTML = '';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById("link67").style.color = "";
+	document.getElementById("link68").style.color = "RED";
 }
 function Help16431(txt) {
- document.getElementById('tip16111').innerHTML = 'Подякувати та порощатись'; 
- document.getElementById('tip171').innerHTML = ''; 
+	document.getElementById('tip16111').innerHTML = 'Подякувати та порощатись'; 
+	document.getElementById('tip171').innerHTML = ''; 
+	document.getElementById("link7B").style.color = "RED";
+	document.getElementById("link7C").style.color = "";
 }
-function Help16432(txt) { document.getElementById('tip16111').innerHTML = 'Перевірити, чи час початку сесії більший за 3 місяці<p><a onClick="Help174()" id=link>Більший за 3 місяці</a> | <a onClick="Help1741()" id=link>Менший за 3 місяці</a></p>'; }
-function Help174(txt) { document.getElementById('tip171').innerHTML = 'Передати завдання інженеру другого рівня'; }
-function Help1741(txt) { document.getElementById('tip171').innerHTML = 'Попросити абонента перезавантажити комп\'ютер'; }
+function Help16432(txt) { document.getElementById('tip16111').innerHTML = 'Перевірити, чи час початку сесії більший за 3 місяці<p><a onClick="Help174()" id=link83>Більший за 3 місяці</a> | <a onClick="Help1741()" id=link84>Менший за 3 місяці</a></p>';
+	document.getElementById("link7B").style.color = "";
+	document.getElementById("link7C").style.color = "RED";
+}
+function Help174(txt) { document.getElementById('tip171').innerHTML = 'Передати завдання інженеру другого рівня';
+	document.getElementById("link83").style.color = "RED";
+	document.getElementById("link84").style.color = "";
+}
+function Help1741(txt) { document.getElementById('tip171').innerHTML = 'Попросити абонента перезавантажити комп\'ютер';
+	document.getElementById("link83").style.color = "";
+	document.getElementById("link84").style.color = "RED";
+}
 
 	//Radio
 function Help153(txt) {
-	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити як налаштована антена<p> <a onClick="Help163()" id=link>Як bridge</a> | <a onClick="Help1631()" id=link>Як роутер</a> </p>';
+	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити як налаштована антена<p> <a onClick="Help163()" id=link65>Як bridge</a> | <a onClick="Help1631()" id=link66>Як роутер</a> </p>';
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15112').innerHTML = '';
 	document.getElementById('tip161').innerHTML = '';
@@ -297,13 +400,23 @@ function Help153(txt) {
 	document.getElementById('tip16111').innerHTML='';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML='';
+	document.getElementById("link51").style.color = "";
+	document.getElementById("link52").style.color = "";
+	document.getElementById("link53").style.color = "RED";
+	document.getElementById("link54").style.color = "";
 }
-	function Help163(txt) { document.getElementById('tip15111').innerHTML = 'Передати завдання інженеру другого рівня'; }
-	function Help1631(txt) { document.getElementById('tip15111').innerHTML = 'Здійснити віддалене налаштування антени'; }
+	function Help163(txt) { document.getElementById('tip15111').innerHTML = 'Передати завдання інженеру другого рівня';
+	document.getElementById("link65").style.color = "RED";
+	document.getElementById("link66").style.color = "";
+	}
+	function Help1631(txt) { document.getElementById('tip15111').innerHTML = 'Здійснити віддалене налаштування антени';
+	document.getElementById("link65").style.color = "";
+	document.getElementById("link66").style.color = "RED";
+	}
 
 	//FTTH
 function Help152(txt) {
-	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p><a onClick="Help162()" id=link>Роутер є</a> | <a onClick="Help1621()" id=link>Нема роутера</a></p>'; 
+	document.getElementById('tip151').innerHTML = 'За МАС-адресою останнього підключення визначити наявність роутера<p><a onClick="Help162()" id=link63>Роутер є</a> | <a onClick="Help1621()" id=link64>Нема роутера</a></p>'; 
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15111').innerHTML = '';
 	document.getElementById('tip161').innerHTML = '';
@@ -311,23 +424,45 @@ function Help152(txt) {
 	document.getElementById('tip16111').innerHTML='';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML='';
+	document.getElementById("link51").style.color = "";
+	document.getElementById("link52").style.color = "RED";
+	document.getElementById("link53").style.color = "";
+	document.getElementById("link54").style.color = "";
 }
-	function Help162(txt) { document.getElementById('tip15112').innerHTML = 'Перевірити наявність віддаленого доступу <p><a onClick="Help172()" id=link>Доступ є</a> | <a onClick="Help1721()" id=link>Доступу немає</a> </p>';
+	function Help162(txt) { document.getElementById('tip15112').innerHTML = 'Перевірити наявність віддаленого доступу <p><a onClick="Help172()" id=link75>Доступ є</a> | <a onClick="Help1721()" id=link76>Доступу немає</a> </p>';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById("link63").style.color = "RED";
+	document.getElementById("link64").style.color = "";	
 	 }
-	function Help1621(txt) { document.getElementById('tip161').innerHTML = 'Попросити абонента відключити VPN та PROXY<p><a onClick="Help16211()" id=link>Допомогло</a> | <a onClick="Help16212()" id=link>Не допомогло</a> </p>'; }
-	function Help16211(txt) { document.getElementById('tip1611').innerHTML = 'Подякувати та порощатись'; }
-	function Help16212(txt) { document.getElementById('tip1611').innerHTML = 'Передати завдання інженеру другого рівня'; }
+	function Help1621(txt) { document.getElementById('tip161').innerHTML = 'Попросити абонента відключити VPN та PROXY<p><a onClick="Help16211()" id=link77>Допомогло</a> | <a onClick="Help16212()" id=link78>Не допомогло</a> </p>';
+	document.getElementById('tip15112').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById("link63").style.color = "";
+	document.getElementById("link64").style.color = "RED";
+	}
+	function Help16211(txt) { document.getElementById('tip1611').innerHTML = 'Подякувати та порощатись';
+	document.getElementById("link77").style.color = "RED";
+	document.getElementById("link78").style.color = "";	
+	}
+	function Help16212(txt) { document.getElementById('tip1611').innerHTML = 'Передати завдання інженеру другого рівня';
+	document.getElementById("link77").style.color = "";
+	document.getElementById("link78").style.color = "RED";	
+	}
 	function Help172(txt) {
 		document.getElementById('tip161').innerHTML = 'Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі';
 		document.getElementById('tip1611').innerHTML = '';
+		document.getElementById("link75").style.color = "RED";
+		document.getElementById("link76").style.color = "";		
 	}
-	function Help1721(txt) { document.getElementById('tip1611').innerHTML = 'Попросити абонента переставити кабель в LAN-порт, здійснити віддалене підключення та налаштувати роутер внутрішньої мережі'; }
-
+	function Help1721(txt) { document.getElementById('tip1611').innerHTML = 'Попросити абонента переставити кабель в LAN-порт, здійснити віддалене підключення та налаштувати роутер внутрішньої мережі'; 
+		document.getElementById('tip161').innerHTML = '';
+		document.getElementById("link75").style.color = "";
+		document.getElementById("link76").style.color = "RED";	
+	}
 	//PON
 function Help151(txt){
-	document.getElementById('tip151').innerHTML='За останньою МАС-адресою визначити наявність роутера<p><a onClick="Help161()" id=link>Роутер є</a> | <a onClick="Help1611()" id=link>Нема роутера</a></p>';
+	document.getElementById('tip151').innerHTML='За останньою МАС-адресою визначити наявність роутера<p><a onClick="Help161()" id=link61>Роутер є</a> | <a onClick="Help1611()" id=link62>Нема роутера</a></p>';
 	document.getElementById('tip1511').innerHTML = '';
 	document.getElementById('tip15112').innerHTML = '';
 	document.getElementById('tip15111').innerHTML = '';
@@ -336,36 +471,66 @@ function Help151(txt){
 	document.getElementById('tip16111').innerHTML='';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML='';
+	document.getElementById("link51").style.color = "RED";
+	document.getElementById("link52").style.color = "";
+	document.getElementById("link53").style.color = "";
+	document.getElementById("link54").style.color = "";
 }
 function Help161(txt) {
-	document.getElementById('tip161').innerHTML = 'Перевірити наявність віддаленого доступу<p id=tip161><a onClick="Help171()" id=link>Доступ є</a> | <a onClick="Help1711()" id=link>Доступу нема</a></p>';
+	document.getElementById('tip161').innerHTML = 'Перевірити наявність віддаленого доступу<p id=tip161><a onClick="Help171()" id=link71>Доступ є</a> | <a onClick="Help1711()" id=link72>Доступу нема</a></p>';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML = '';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link61").style.color = "RED";
+	document.getElementById("link62").style.color = "";
 }
 	function Help1611(txt) {
-		document.getElementById('tip1611').innerHTML = 'Попросити абонента відключити VPN та PROXY<p id=1611><a onClick="Help16111()" id=link>Допомогло</a> | <a onClick="Help16112()" id=link>Не допомогло</a></p>';
+		document.getElementById('tip1611').innerHTML = 'Попросити абонента відключити VPN та PROXY<p id=1611><a onClick="Help16111()" id=link73>Допомогло</a> | <a onClick="Help16112()" id=link74>Не допомогло</a></p>';
 		document.getElementById('tip161').innerHTML = '';
 		document.getElementById('tip16111').innerHTML = '';
 		document.getElementById('tip171').innerHTML = '';
 		document.getElementById('tip181').innerHTML = '';
+		document.getElementById("link61").style.color = "";
+		document.getElementById("link62").style.color = "RED";
 	}
 	function Help16111(txt) {
 		document.getElementById('tip16111').innerHTML = 'Подякувати та попрощатись';
 		document.getElementById('tip171').innerHTML = '';
 		document.getElementById('tip181').innerHTML = '';
+		document.getElementById("link73").style.color = "RED";
+		document.getElementById("link74").style.color = "";
 	}
- 	function Help16112(txt) { document.getElementById('tip16111').innerHTML = 'Перевірити, чи час початку сесії більший за 3 місяці<p><a onClick="Help161121()" id=link>Більший за 3 місяці</a> | <a onClick="Help161122()" id=link>Менший за 3 місяці</a></p>'; }
+ 	function Help16112(txt) { document.getElementById('tip16111').innerHTML = 'Перевірити, чи час початку сесії більший за 3 місяці<p><a onClick="Help161121()" id=link81>Більший за 3 місяці</a> | <a onClick="Help161122()" id=link82>Менший за 3 місяці</a></p>';
+ 		document.getElementById("link73").style.color = "";
+		document.getElementById("link74").style.color = "RED";
+	}
  	function Help161121(txt) {
  		document.getElementById('tip171').innerHTML = 'Передати завдання інженеру другого рівня';
  		document.getElementById('tip181').innerHTML = '';
+		document.getElementById("link81").style.color = "RED";
+		document.getElementById("link82").style.color = "";
+	}
+ 	function Help161122(txt) { document.getElementById('tip171').innerHTML = 'Перевірити, чи рівень сигналу в нормі<p> <a onClick="Help182()" id=link91>В нормі</a> | <a onClick="Help181()" id=link92>Низький</a> </p>';
+ 		document.getElementById("link81").style.color = "";
+		document.getElementById("link82").style.color = "RED";
+	}
+ 	function Help181(txt) { document.getElementById('tip181').innerHTML = 'Передати завдання інженеру другого рівня'; 
+		document.getElementById("link91").style.color = "";
+		document.getElementById("link92").style.color = "RED";
  	}
- 	function Help161122(txt) { document.getElementById('tip171').innerHTML = 'Перевірити, чи рівень сигналу в нормі<p> <a onClick="Help182()" id=link>В нормі</a> | <a onClick="Help181()" id=link>Низький</a> </p>'; }
- 	function Help181(txt) { document.getElementById('tip181').innerHTML = 'Передати завдання інженеру другого рівня'; }
- 	function Help182(txt) { document.getElementById('tip181').innerHTML = 'Повідомити абонента, що рівень сигналу в нормі та попросити перезавантажити комп\'ютер'; }
-function Help171(txt) { document.getElementById('tip171').innerHTML = 'За допомогою віддаленого доступу налаштувати роутер внутрішньої мережі'; }
-	function Help1711(txt) { document.getElementById('tip171').innerHTML = 'Попросити абонента переставити кабель в LAN-порт і здійснити віддалене налаштування роутера<BR>Переконатись, що абонент має доступ до інтернету, подякувати та попрощатись'; }
+ 	function Help182(txt) { document.getElementById('tip181').innerHTML = 'Повідомити абонента, що рівень сигналу в нормі та попросити перезавантажити комп\'ютер';
+		document.getElementById("link91").style.color = "RED";
+		document.getElementById("link92").style.color = "";
+ 	}
+	function Help171(txt) { document.getElementById('tip171').innerHTML = 'За допомогою віддаленого доступу налаштувати роутер внутрішньої мережі';
+	document.getElementById("link71").style.color = "RED";
+	document.getElementById("link72").style.color = "";
+}
+	function Help1711(txt) { document.getElementById('tip171').innerHTML = 'Попросити абонента переставити кабель в LAN-порт і здійснити віддалене налаштування роутера<BR>Переконатись, що абонент має доступ до інтернету, подякувати та попрощатись';
+	document.getElementById("link71").style.color = "";
+	document.getElementById("link72").style.color = "RED";
+}
 function Help3(txt){
 	document.getElementById('tip1').innerHTML='Переключити на відповідальну особу';
 	document.getElementById('tip2').innerHTML='';
@@ -374,12 +539,16 @@ function Help3(txt){
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML='';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip15111').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link11").style.color = "";
+	document.getElementById("link12").style.color = "";
+	document.getElementById("link13").style.color = "RED";
 }
 </script>
 </body></html>
