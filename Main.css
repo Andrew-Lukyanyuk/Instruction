@@ -1,0 +1,11 @@
+.navbar {
+	height: 30px;
+	color: blue;
+}
+#idClock {
+	color: white;
+	font-size: 20px;
+}
+.navbar-brand {
+	font-size: 25px;
+}
