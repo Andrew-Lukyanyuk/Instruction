@@ -139,7 +139,7 @@ function Help1(txt){
 	document.getElementById("link12").style.color = "";
 	document.getElementById("link13").style.color = "";
 }
-function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Перевірити стан підключення</h4><p id=tip121><a onClick="Help131()" id=link31>Онлайн</a> | <a onClick="Help132()" id=link32>Сесія завершена</a> | Нема даних</p>';
+function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Перевірити стан підключення</h4><p id=tip121><a onClick="Help131()" id=link31>Онлайн</a> | <a onClick="Help132()" id=link32>Сесія завершена</a> | <a onClick="Help133()" id=link33>Нема даних</a></p>';
 	document.getElementById("link21").style.color = RED;
 	document.getElementById("link22").style.color = "";
 }
@@ -209,6 +209,67 @@ function Help132(txt){
 	document.getElementById("link31").style.color = "";
 	document.getElementById("link32").style.color = RED;
 	document.getElementById("link33").style.color = "";
+}
+function Help133(txt){
+	document.getElementById('tip131').innerHTML='<h4>Спитати у абонента чи він використовує роутер</h4> <p><a onClick="Help133Router()" id=link47>Роутер є</a> | <a onClick="Help133NoRouter()" id=link48>Роутера нема</a></p>';
+	document.getElementById('tip132').innerHTML='';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link31").style.color = "";
+	document.getElementById("link32").style.color = "";
+	document.getElementById("link33").style.color = RED;
+}
+function Help133Router(txt){
+	document.getElementById('tip132').innerHTML='<h4>Попросити назвати МАС-адресу, записану на звороті і підключити кабель у LAN-порт<br>Перевірити чи видно цю МАС-адресу в програмі Userside</h4><p><a onClick="MAC_Visible()" id=link5D>Видно</a> | <a onClick="MAC_NotVisible()" id=link5E>Не видно</a></p>';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link47").style.color = RED;
+	document.getElementById("link48").style.color = "";
+}
+function MAC_Visible(txt){
+	document.getElementById('tip141').innerHTML='<h4>Здійснити віддалене налаштування роутера</h4>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link5D").style.color = RED;
+	document.getElementById("link5E").style.color = "";
+}
+function MAC_NotVisible(txt){
+	document.getElementById('tip141').innerHTML='<h4>Попросити переставити кабель напряму в комп\'ютер</h4>';
+	document.getElementById('tip151').innerHTML='<h4>Запустити браузер та набрати адресу 172.20.0.6</h4>';
+	document.getElementById('tip161').innerHTML = '<h4>Відкрити закладку "Швидкий набір" та скачати файл</h4>';
+	document.getElementById('tip1611').innerHTML = '<h4>Запустити на виконання для автоматичного встановлення PPPoE</h4>';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link5D").style.color = "";
+	document.getElementById("link5E").style.color = RED;
+}
+function Help133NoRouter(txt){
+	document.getElementById('tip132').innerHTML='<h4>Попросити абонента :</h4>';
+	document.getElementById('tip141').innerHTML = '<h4>Запустити браузер та набрати адресу 172.20.0.6</h4>';
+	document.getElementById('tip151').innerHTML='<h4>Відкрити закладку "Швидкий набір" та скачати файл</h4>';
+	document.getElementById('tip161').innerHTML = '<h4>Запустити на виконання для автоматичного встановлення PPPoE</h4>';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link47").style.color = "";
+	document.getElementById("link48").style.color = RED;
 }
 function Help1321(txt){
 	document.getElementById('tip132').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці<br>до конкретного абонента</h4> <p id=tip131><a onClick="Help1331()" id=link55> Лінк є </a>| <a onClick="Help1332()" id=link56>Лінку нема </a></p>';
