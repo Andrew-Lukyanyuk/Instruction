@@ -8,7 +8,6 @@
 </head>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
 <link rel="stylesheet" href="Main.css">
 
@@ -17,23 +16,23 @@
 <div class="navbar bg-info navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" >AGROCOM</a>
+			<a class="navbar-brand" >Аргоком</a>
 		</div>
 			<span id="idClock"></span>
-			<button type="submit" class="btn btn-primary"><a onclick="Collapse()">Згорнути</a></button>
+			<button type="submit" class="btn btn-primary btn-sm"><a onclick="Collapse()">Згорнути</a></button>
 	</div>
 </div>
 
 
 <center>
-<br><br><br>
 <p><b><h4>Перевірити дані клієнта</h4></b></p>
-<p>Лінк в біллінг | Прізвище | Дані відсутні</p>
+<p><a onclick="Billing()" id="link01">Лінк в біллінг</a> | <a onclick="Surname()" id="link02">Прізвище</a> | <a onclick="NoData()" id="link03">Дані відсутні</a></p>
+<p id="tip0"></p> <p id="tip01"></p>
 <hr>
 <p><h4>Вислухати звернення абонента</h4></p>
 <p> <a onclick="Help1()" id="link11">Відсутність зв'язку</a> |<a onclick="HelpLoSpeed()" id="link12"> Низька швидкість </a>| <a onclick="Help3()" id="link13">Інше</a></p>
 
-<p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tip132"></p> <p id="tip141"></p> <p id="tip142"></p> <p id="tip151"></p>
+ <p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tip132"></p> <p id="tip141"></p> <p id="tip142"></p> <p id="tip151"></p>
 <p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p>
 </center>
 
@@ -63,7 +62,8 @@ function Clock()
 Clock();
 
 function Collapse(txt) {
-document.getElementById('tip1').innerHTML='';
+	document.getElementById('tip0').innerHTML='';
+	document.getElementById('tip1').innerHTML='';
 	document.getElementById('tip2').innerHTML='';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
@@ -79,10 +79,45 @@ document.getElementById('tip1').innerHTML='';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById("link01").style.color = "";
+	document.getElementById("link02").style.color = "";
+	document.getElementById("link03").style.color = "";
 	document.getElementById("link11").style.color = "";
 	document.getElementById("link12").style.color = "";
 	document.getElementById("link13").style.color = "";
 }
+function Billing(txt){
+	document.getElementById('tip0').innerHTML='<h4>Отримати дані абонента<h4>';
+	document.getElementById('tip01').innerHTML = '';	
+	document.getElementById("link01").style.color = RED;
+	document.getElementById("link02").style.color = "";
+	document.getElementById("link03").style.color = "";
+}
+function Surname(txt){
+	document.getElementById('tip0').innerHTML='<h4>Уточнити чи прізвище абонента відповідає тому, що оператор бачить на дисплеї телефону<h4> <p> <a onClick="Respond()" id=link021>Відповідає</a> | <a onClick="NotRespond()" id=link022>Не відповідає</a> </p>';
+	document.getElementById('tip01').innerHTML = '';
+	document.getElementById("link01").style.color = "";
+	document.getElementById("link02").style.color = RED;
+	document.getElementById("link03").style.color = "";
+}
+function NoData(txt){
+	document.getElementById('tip0').innerHTML='<h4>Спитати прізвище абонента і за якою адресою підключено інтернет. Здійснити пошук за<br>прізвищем і адресою та перейти по лінку на абонента в біллінгу<h4>';
+	document.getElementById('tip01').innerHTML = '';
+	document.getElementById("link01").style.color = "";
+	document.getElementById("link02").style.color = "";
+	document.getElementById("link03").style.color = RED;
+}
+function Respond(txt){
+	document.getElementById('tip01').innerHTML='<h4>Здійснити пошук за номером телефона<h4>';
+	document.getElementById("link021").style.color = RED;
+	document.getElementById("link022").style.color = "";
+}
+function NotRespond(txt){
+	document.getElementById('tip01').innerHTML='<h4>Вияснити прізвище, адресу підключення та здійснити пошук за прізвищем і адресою.<br>За результатами пошуку перейти по лінку на абонента в білінгу<h4>';
+	document.getElementById("link021").style.color = RED;
+	document.getElementById("link022").style.color = "";
+}
+
 
 function Help1(txt){
 	document.getElementById('tip1').innerHTML='<h4>Перевірити стан рахунку<h4>';
@@ -131,9 +166,9 @@ function HelpLoSpeedRouter(txt){
 	document.getElementById('tip2').innerHTML=' <h4>Попросити абонента :</h4> ';
 	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
 	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<p><img src="Rapid.jpg"></p>';
-	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Agrocom.exe';
+	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл AArgocom.exe';
 	document.getElementById('tip141').innerHTML='4 Переставити кабель з WAN-порта роутера в мережеву карту комп\'ютера';
-	document.getElementById('tip151').innerHTML = '5 Запустити на виконання Agrocom.exe та виконати вказівки до налаштувань, які там запропоновані ';
+	document.getElementById('tip151').innerHTML = '5 Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані ';
 	document.getElementById('tip161').innerHTML='6 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
 	document.getElementById('tip1611').innerHTML = '7 Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості';
 	document.getElementById('tip16111').innerHTML = '8 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
@@ -147,8 +182,8 @@ function HelpLoSpeedNoRouter(txt){
 	document.getElementById('tip2').innerHTML=' <h4>Попросити абонента :</h4> ';
 	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
 	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<p><img src="Rapid.jpg"></p>';
-	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Agrocom.exe';
-	document.getElementById('tip141').innerHTML='4 Запустити на виконання Agrocom.exe та виконати вказівки до налаштувань, які там запропоновані';
+	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Argocom.exe';
+	document.getElementById('tip141').innerHTML='4 Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані';
 	document.getElementById('tip151').innerHTML = '5 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
 	document.getElementById('tip161').innerHTML='6 Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості';
 	document.getElementById('tip1611').innerHTML = '7 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
@@ -176,7 +211,7 @@ function Help132(txt){
 	document.getElementById("link33").style.color = "";
 }
 function Help1321(txt){
-	document.getElementById('tip132').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці<br>до конкретного абонента</h4> <p id=tip131><a onClick="Help1331()" id=link55> Лінк є </a>| <a onClick="Help1332()" id=link56>Лінку немає </a></p>';
+	document.getElementById('tip132').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці<br>до конкретного абонента</h4> <p id=tip131><a onClick="Help1331()" id=link55> Лінк є </a>| <a onClick="Help1332()" id=link56>Лінку нема </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
@@ -245,7 +280,7 @@ function Help13232(txt){
 	document.getElementById("link6E").style.color = RED;	
 }
 function Help13222(txt){
-	document.getElementById('tip141').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці до конкретного абонента</h4> <p><a onClick="Help13223()" id=link6B>Лінк є</a> | <a onClick="Help13233()" id=link6C>Лінку немає </a></p>';
+	document.getElementById('tip141').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці до конкретного абонента</h4> <p><a onClick="Help13223()" id=link6B>Лінк є</a> | <a onClick="Help13233()" id=link6C>Лінку нема </a></p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
@@ -275,7 +310,7 @@ function Help13233(txt){
 	document.getElementById("link6C").style.color = RED;	
 }
 function HelpbaseRadio(txt){
-	document.getElementById('tip132').innerHTML='<h4>Віддалено зайти на базову станцію радіообладнання, прервірити налаштування та при<br>потребі відновити їх. Перевірити наявність радіолінку до абонента</h4> <p><a onClick="HelpLink()" id=link59> Лінк є </a>|<a onClick="HelpNoLink()" id=link5A> Лінку немає </a></p>';
+	document.getElementById('tip132').innerHTML='<h4>Віддалено зайти на базову станцію радіообладнання, прервірити налаштування та при<br>потребі відновити їх. Перевірити наявність радіолінку до абонента</h4> <p><a onClick="HelpLink()" id=link59> Лінк є </a>|<a onClick="HelpNoLink()" id=link5A> Лінку нема </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
@@ -396,7 +431,7 @@ function Help154(txt) {
 	document.getElementById("link54").style.color = RED;
 }
 function Help164(txt) {
-	document.getElementById('tip1511').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p> <a onClick="Help1641()" id=link79>Доступ є</a> | <a onClick="Help1642()" id=link7A>Доступу немає</a> </p>';
+	document.getElementById('tip1511').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p> <a onClick="Help1641()" id=link79>Доступ є</a> | <a onClick="Help1642()" id=link7A>Доступу нема</a> </p>';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
@@ -478,7 +513,7 @@ function Help152(txt) {
 	document.getElementById("link53").style.color = "";
 	document.getElementById("link54").style.color = "";
 }
-	function Help162(txt) { document.getElementById('tip15112').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p><a onClick="Help172()" id=link75>Доступ є</a> | <a onClick="Help1721()" id=link76>Доступу немає</a> </p>';
+	function Help162(txt) { document.getElementById('tip15112').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p><a onClick="Help172()" id=link75>Доступ є</a> | <a onClick="Help1721()" id=link76>Доступу нема</a> </p>';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById("link63").style.color = RED;
