@@ -29,17 +29,12 @@
 <p><a onclick="Billing()" id="link01">Лінк в біллінг</a> | <a onclick="Surname()" id="link02">Прізвище</a> | <a onclick="NoData()" id="link03">Дані відсутні</a></p>
 <p id="tip0"></p> <p id="tip01"></p>
 <hr>
-<p><h4>Вислухати звернення абонента</h4></p>
-<p> <a onclick="Help1()" id="link11">Відсутність зв'язку</a> |<a onclick="HelpLoSpeed()" id="link12"> Низька швидкість </a>| <a onclick="Help3()" id="link13">Інше</a></p>
 
- <p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tip132"></p> <p id="tip141"></p> <p id="tip142"></p> <p id="tip151"></p>
-<p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p>
+
+ <p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tipNoAccess"></p> <p id="tipNoAccessChoose"></p> <p id="tip1311"></p> <p id="tip1312"></p> 				<p id="tip132"></p> <p id="tip141"></p> <p id="tip1411"></p>  <p id="tip142"></p> <p id="tip151"></p> <p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p> <p id="tip191"></p>
 </center>
 
-
 <script language="JavaScript">
-
-// link33 зарезервовано за "нема даних" та не додано в стайли
 
 var RED="#ab0918";
 
@@ -67,8 +62,11 @@ function Collapse(txt) {
 	document.getElementById('tip2').innerHTML='';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML='';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
 	document.getElementById('tip142').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip1511').innerHTML='';
@@ -79,6 +77,8 @@ function Collapse(txt) {
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML='';
 	document.getElementById("link01").style.color = "";
 	document.getElementById("link02").style.color = "";
 	document.getElementById("link03").style.color = "";
@@ -87,8 +87,29 @@ function Collapse(txt) {
 	document.getElementById("link13").style.color = "";
 }
 function Billing(txt){
-	document.getElementById('tip0').innerHTML='<h4>Отримати дані абонента<h4>';
-	document.getElementById('tip01').innerHTML = '';	
+	document.getElementById('tip0').innerHTML='<p><h4>Вислухати звернення абонента</h4></p><p> <a onclick="Help1()" id="link11">Відсутність зв\'язку</a> |<a onclick="HelpLoSpeed()" id="link12"> Низька швидкість </a>| <a onclick="Help3()" id="link13">Інше</a></p>';
+	document.getElementById('tip01').innerHTML='';
+	document.getElementById('tip1').innerHTML='';
+	document.getElementById('tip2').innerHTML='';
+	document.getElementById('tip121').innerHTML='';
+	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML='';
+	document.getElementById('tip132').innerHTML='';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tip142').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip15111').innerHTML='';
+	document.getElementById('tip15112').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
 	document.getElementById("link01").style.color = RED;
 	document.getElementById("link02").style.color = "";
 	document.getElementById("link03").style.color = "";
@@ -96,6 +117,27 @@ function Billing(txt){
 function Surname(txt){
 	document.getElementById('tip0').innerHTML='<h4>Уточнити чи прізвище абонента відповідає тому, що оператор бачить на дисплеї телефону<h4> <p> <a onClick="Respond()" id=link021>Відповідає</a> | <a onClick="NotRespond()" id=link022>Не відповідає</a> </p>';
 	document.getElementById('tip01').innerHTML = '';
+	document.getElementById('tip1').innerHTML = '';
+	document.getElementById('tip2').innerHTML='';
+	document.getElementById('tip121').innerHTML='';
+	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML='';
+	document.getElementById('tip132').innerHTML='';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tip142').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip15111').innerHTML='';
+	document.getElementById('tip15112').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
 	document.getElementById("link01").style.color = "";
 	document.getElementById("link02").style.color = RED;
 	document.getElementById("link03").style.color = "";
@@ -103,6 +145,27 @@ function Surname(txt){
 function NoData(txt){
 	document.getElementById('tip0').innerHTML='<h4>Спитати прізвище абонента і за якою адресою підключено інтернет. Здійснити пошук за<br>прізвищем і адресою та перейти по лінку на абонента в біллінгу<h4>';
 	document.getElementById('tip01').innerHTML = '';
+	document.getElementById('tip1').innerHTML='';
+	document.getElementById('tip2').innerHTML='';
+	document.getElementById('tip121').innerHTML='';
+	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML='';
+	document.getElementById('tip132').innerHTML='';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tip142').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip15111').innerHTML='';
+	document.getElementById('tip15112').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
 	document.getElementById("link01").style.color = "";
 	document.getElementById("link02").style.color = "";
 	document.getElementById("link03").style.color = RED;
@@ -114,8 +177,8 @@ function Respond(txt){
 }
 function NotRespond(txt){
 	document.getElementById('tip01').innerHTML='<h4>Вияснити прізвище, адресу підключення та здійснити пошук за прізвищем і адресою.<br>За результатами пошуку перейти по лінку на абонента в білінгу<h4>';
-	document.getElementById("link021").style.color = RED;
-	document.getElementById("link022").style.color = "";
+	document.getElementById("link021").style.color = "";
+	document.getElementById("link022").style.color = RED;
 }
 
 
@@ -124,8 +187,11 @@ function Help1(txt){
 	document.getElementById('tip2').innerHTML='<a onClick="Help121()" id=link21>Є кошти</a> | <a onClick="Help122()" id=link22>Нема коштів</a>';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML = '';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
 	document.getElementById('tip142').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip1511').innerHTML='';
@@ -135,11 +201,30 @@ function Help1(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML='';
 	document.getElementById("link11").style.color = RED;
 	document.getElementById("link12").style.color = "";
 	document.getElementById("link13").style.color = "";
 }
 function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Перевірити стан підключення</h4><p id=tip121><a onClick="Help131()" id=link31>Онлайн</a> | <a onClick="Help132()" id=link32>Сесія завершена</a> | <a onClick="Help133()" id=link33>Нема даних</a></p>';
+	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML = '';
+	document.getElementById('tip132').innerHTML='';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tip142').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip15111').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML='';
 	document.getElementById("link21").style.color = RED;
 	document.getElementById("link22").style.color = "";
 }
@@ -149,6 +234,50 @@ function HelpLoSpeed(txt){
 	document.getElementById('tip2').innerHTML='';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip132').innerHTML='';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
+	document.getElementById("link11").style.color = "";
+	document.getElementById("link12").style.color = RED;
+	document.getElementById("link13").style.color = "";
+}
+function HelpLoSpeedRouter(txt){	
+	document.getElementById('tip2').innerHTML=' <h4>Попросити абонента :</h4> ';
+	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
+	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<br><br><p id="tipNoAccess"><a onClick="NoAccess()" id=link49>Якщо 172.20.0.6. недоступний</a></p>';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML='';
+	document.getElementById('tip1312').innerHTML = '<img src="Rapid.jpg">';
+	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Argocom.exe';
+	document.getElementById('tip141').innerHTML='4 Переставити кабель з WAN-порта роутера в мережеву карту комп\'ютера';
+	document.getElementById('tip151').innerHTML = '5 Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані ';
+	document.getElementById('tip161').innerHTML='6 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
+	document.getElementById('tip1611').innerHTML = '7 Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості';
+	document.getElementById('tip16111').innerHTML = '8 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
+	document.getElementById("link23").style.color = RED;
+	document.getElementById("link24").style.color = "";
+}
+function NoAccess(txt){ 
+	document.getElementById('tip1311').innerHTML = '<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="WindowsXP()" id=link4C>Windows XP</a> | <a onClick="Windows7()" id=link4D>Windows 7</a> | <a onClick="Windows8()" id=link4E>Windows 8/8.1</a> | <a onClick="Windows10()" id=link4F>Windows 10</a><p/>';
+	document.getElementById('tip2').innerHTML='';
+	document.getElementById('tip121').innerHTML='';
+	document.getElementById('tip131').innerHTML='';
+	document.getElementById('tipNoAccessChoose').innerHTML='172.20.0.6. недоступний';
+	document.getElementById('tip1312').innerHTML = '';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
@@ -158,30 +287,150 @@ function HelpLoSpeed(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
-	document.getElementById("link11").style.color = "";
-	document.getElementById("link12").style.color = RED;
-	document.getElementById("link13").style.color = "";
+	document.getElementById("tipNoAccessChoose").style.color = RED;
 }
-function HelpLoSpeedRouter(txt){	
-	document.getElementById('tip2').innerHTML=' <h4>Попросити абонента :</h4> ';
-	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
-	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<p><img src="Rapid.jpg"></p>';
-	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл AArgocom.exe';
-	document.getElementById('tip141').innerHTML='4 Переставити кабель з WAN-порта роутера в мережеву карту комп\'ютера';
-	document.getElementById('tip151').innerHTML = '5 Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані ';
-	document.getElementById('tip161').innerHTML='6 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
-	document.getElementById('tip1611').innerHTML = '7 Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості';
-	document.getElementById('tip16111').innerHTML = '8 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98';
-	document.getElementById('tip171').innerHTML='';
-	document.getElementById('tip181').innerHTML = '';
-	document.getElementById("link23").style.color = RED;
-	document.getElementById("link24").style.color = "";
+
+function WindowsXP(txt){
+	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYesXP()" id=link4A>Так</a> | <a onClick="IPNoXP()" id=link4B>Ні</a></p>';
+	document.getElementById('tip1411').innerHTML='';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4C").style.color = RED;
+	document.getElementById("link4D").style.color = "";
+ 	document.getElementById("link4E").style.color = "";
+	document.getElementById("link4F").style.color = "";
+
 }
+function IPYesXP(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function IPNoXP(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisibleXP()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisibleXP()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function MACvisibleXP(txt){
+	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Зайти в "Пуск", натиснути правою кнопкою на "Панель Управління" та вибрати "Відкрити"<br><br>Зайти в "Мережа та підключення до інтернету" >> "Мережеві підключення".<br><br> В лівій верхній частині вікна у вкладці "Мережеві задачі" вибрати пункт "Створення нового підключення"<br><br>Відкриється "Майстер нових підключень", натиснути кнопку "Далі"<br><br> Послідовно вибрати "Підключитись до інтернету" >> "Встановити підключення вручну" >> "Через постійне високошвидкісне підключення" та натиснути "Готово"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function MACNotvisibleXP(txt){
+	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function Windows7(txt){
+	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYes()" id=link4A>Так</a> | <a onClick="IPNo()" id=link4B>Ні</a></p>';
+	document.getElementById('tip1411').innerHTML='';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4C").style.color = "";
+	document.getElementById("link4D").style.color = RED;
+ 	document.getElementById("link4E").style.color = "";
+	document.getElementById("link4F").style.color = "";
+
+}
+function IPYes(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function IPNo(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function MACvisible(txt){
+	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function MACNotvisible(txt){
+	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function Windows8(txt){
+	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYes8()" id=link4A>Так</a> | <a onClick="IPNo8()" id=link4B>Ні</a></p>';
+	document.getElementById('tip1411').innerHTML='';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4C").style.color = "";
+	document.getElementById("link4D").style.color = "";
+ 	document.getElementById("link4E").style.color = RED;
+	document.getElementById("link4F").style.color = "";
+
+}
+function IPYes8(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function IPNo8(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible8()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible8()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function MACvisible8(txt){
+	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути правою кнопкою на "Пуск" та зайти в "Панель Управління"<br><br>Далі послідовно вибрати "Мережа та інтернет" >> "Центр управління мережами та спільним доступом"<br><br>"Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати пункт "Підключення до інтернету" та натиснути "Далі"<br><br>"Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль та придумати назву підключення<br><br>Натиснути кнопку "Підключитись"<p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function MACNotvisible8(txt){
+	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function Windows10(txt){
+	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYes10()" id=link4A>Так</a> | <a onClick="IPNo10()" id=link4B>Ні</a></p>';
+	document.getElementById('tip1411').innerHTML='';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4C").style.color = "";
+	document.getElementById("link4D").style.color = "";
+ 	document.getElementById("link4E").style.color = "";
+	document.getElementById("link4F").style.color = RED;
+
+
+}
+function IPYes10(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function IPNo10(txt){
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible10()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible10()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function MACvisible10(txt){
+	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Правою кнопкою миші натиснути на "Пуск" та зайти в "Панель Управління">><br><br>"Мережа та інтернет">> "Центр управління мережами та спільним доступом" >> "Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати "Підключення до інтернету та натиснути "Далі" <br><br> "Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль, придумати назву підключення та натиснути "Підключити"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function MACNotvisible10(txt){
+	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
 
 function HelpLoSpeedNoRouter(txt){	
 	document.getElementById('tip2').innerHTML=' <h4>Попросити абонента :</h4> ';
 	document.getElementById('tip121').innerHTML='1 Відключити програми типу VPN та Proxy';
-	document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<p><img src="Rapid.jpg"></p>';
+
+		document.getElementById('tip131').innerHTML='2 Зайти на сайт 172.20.0.6 та натиснути закладку "Швидкий набір"<br><br><p id="tipNoAccess"><a onClick="NoAccess()" id=link49>Якщо 172.20.0.6. недоступний</a></p>';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML = '<img src="Rapid.jpg">';
 	document.getElementById('tip132').innerHTML = '3 Скопіювати собі на комп\'ютер файл Argocom.exe';
 	document.getElementById('tip141').innerHTML='4 Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані';
 	document.getElementById('tip151').innerHTML = '5 По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись<br> великих та маленьких літер та натиснути кнопку "Підключити"';
@@ -190,6 +439,8 @@ function HelpLoSpeedNoRouter(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
 	document.getElementById("link23").style.color = "";
 	document.getElementById("link24").style.color = RED;
 }
@@ -206,6 +457,7 @@ function Help132(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
 	document.getElementById("link31").style.color = "";
 	document.getElementById("link32").style.color = RED;
 	document.getElementById("link33").style.color = "";
@@ -221,6 +473,7 @@ function Help133(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
 	document.getElementById("link31").style.color = "";
 	document.getElementById("link32").style.color = "";
 	document.getElementById("link33").style.color = RED;
@@ -229,11 +482,13 @@ function Help133Router(txt){
 	document.getElementById('tip132').innerHTML='<h4>Попросити назвати МАС-адресу, записану на звороті і підключити кабель у LAN-порт<br>Перевірити чи видно цю МАС-адресу в програмі Userside</h4><p><a onClick="MAC_Visible()" id=link5D>Видно</a> | <a onClick="MAC_NotVisible()" id=link5E>Не видно</a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link47").style.color = RED;
 	document.getElementById("link48").style.color = "";
 }
@@ -245,29 +500,33 @@ function MAC_Visible(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
 	document.getElementById("link5D").style.color = RED;
 	document.getElementById("link5E").style.color = "";
 }
 function MAC_NotVisible(txt){
-	document.getElementById('tip141').innerHTML='<h4>Попросити переставити кабель напряму в комп\'ютер</h4>';
-	document.getElementById('tip151').innerHTML='<h4>Запустити браузер та набрати адресу 172.20.0.6</h4>';
-	document.getElementById('tip161').innerHTML = '<h4>Відкрити закладку "Швидкий набір" та скачати файл</h4>';
-	document.getElementById('tip1611').innerHTML = '<h4>Запустити на виконання для автоматичного встановлення PPPoE</h4>';
-	document.getElementById('tip16111').innerHTML = '';
-	document.getElementById('tip171').innerHTML='';
-	document.getElementById('tip181').innerHTML = '';
-	document.getElementById("link5D").style.color = "";
-	document.getElementById("link5E").style.color = RED;
-}
-function Help133NoRouter(txt){
-	document.getElementById('tip132').innerHTML='<h4>Попросити абонента :</h4>';
-	document.getElementById('tip141').innerHTML = '<h4>Запустити браузер та набрати адресу 172.20.0.6</h4>';
-	document.getElementById('tip151').innerHTML='<h4>Відкрити закладку "Швидкий набір" та скачати файл</h4>';
-	document.getElementById('tip161').innerHTML = '<h4>Запустити на виконання для автоматичного встановлення PPPoE</h4>';
+	document.getElementById('tip141').innerHTML='<h4>Попросити абонента :</h4>переставити кабель напряму в комп\'ютер<p><br>Запустити браузер та набрати адресу 172.20.0.6</p><p>Відкрити закладку "Швидкий набір" та скачати файл<</p><p>Запустити на виконання для автоматичного встановлення PPPoE</p><p><a onClick="OLTSiteNoAccess()" id=link7G>172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById("link5D").style.color = "";
+	document.getElementById("link5E").style.color = RED;
+}
+function Help133NoRouter(txt){
+	document.getElementById('tip132').innerHTML='<h4>Попросити абонента :</h4><p>Запустити браузер та набрати адресу 172.20.0.6</p><p>Відкрити закладку "Швидкий набір" та скачати файл</p><p>Запустити на виконання для автоматичного встановлення PPPoE</p><p><a onClick="OLTSiteNoAccess()" id=link7G>172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip16111').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link47").style.color = "";
 	document.getElementById("link48").style.color = RED;
 }
@@ -289,22 +548,170 @@ function Help1331(txt){
 	document.getElementById('tip141').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4> <p id=tip141> <a onClick="Help1341()" id=link69>Роутер є</a> | <a onClick="Help1342()" id=link6A>Нема роутера</a> </p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+ 	document.getElementById('tip171').innerHTML=''
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link55").style.color = RED;
 	document.getElementById("link56").style.color = "";
 }
 function Help1341(txt){
 	document.getElementById('tip151').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера</h4>';
+	document.getElementById('tip161').innerHTML=''
+ 	document.getElementById('tip171').innerHTML=''
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link69").style.color = RED;
 	document.getElementById("link6A").style.color = "";
 }
 function Help1342(txt){
-	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного встановлення PPPoE</h4>';
-	document.getElementById("link69").style.color = "";
+	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір",<br> скачати файл та запустити на виконання для автоматичного встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" id=link7G>172.20.0.6 недоступний</a></p>';
+ 	document.getElementById('tip161').innerHTML=''
+ 	document.getElementById('tip171').innerHTML=''
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+ 	document.getElementById("link69").style.color = "";
 	document.getElementById("link6A").style.color = RED;
 }
+function OLTSiteNoAccess(txt){
+	document.getElementById('tip161').innerHTML='<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="OLTWindowsXP()" id=link85>Windows XP</a> | <a onClick="OLTWindows7()" id=link86>Windows 7</a> | <a onClick="OLTWindows8()" id=link87>Windows 8/8.1</a> | <a onClick="OLTWindows10()" id=link88>Windows 10</a><p/>';
+	document.getElementById('tip171').innerHTML=''
+ 	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link7G").style.color = RED;
+}
+function OLTWindowsXP(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYesXP()" id=link4A>Так</a> | <a onClick="OLTIPNoXP()" id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = RED;
+	document.getElementById("link86").style.color = "";
+ 	document.getElementById("link87").style.color = "";
+	document.getElementById("link88").style.color = "";
+
+}
+function OLTIPYesXP(txt){
+	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNoXP(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisibleXP()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisibleXP()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisibleXP(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisibleXP(txt){
+	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function OLTWindows7(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes7()" id=link4A>Так</a> | <a onClick="OLTIPNo7()" id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = "";
+	document.getElementById("link86").style.color = RED;
+ 	document.getElementById("link87").style.color = "";
+	document.getElementById("link88").style.color = "";
+}
+function OLTIPYes7(txt){
+	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNo7(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible7()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible7()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisible7(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisible7(txt){
+	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function OLTWindows8(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes8()" id=link4A>Так</a> | <a onClick="OLTIPNo8()" id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = "";
+	document.getElementById("link86").style.color = "";
+ 	document.getElementById("link87").style.color = RED;
+	document.getElementById("link88").style.color = "";
+}
+function OLTIPYes8(txt){
+	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNo8(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible8()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible8()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisible8(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути правою кнопкою на "Пуск" та зайти в "Панель Управління"<br><br>Далі послідовно вибрати "Мережа та інтернет" >> "Центр управління мережами та спільним доступом"<br><br>"Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати пункт "Підключення до інтернету" та натиснути "Далі"<br><br>"Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль та придумати назву підключення<br><br>Натиснути кнопку "Підключитись"<p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisible8(txt){
+	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function OLTWindows10(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes10()" id=link4A>Так</a> | <a onClick="OLTIPNo10()" id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = "";
+	document.getElementById("link86").style.color = "";
+ 	document.getElementById("link87").style.color = "";
+	document.getElementById("link88").style.color = RED;
+}
+function OLTIPYes10(txt){
+	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNo10(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible10()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible10()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisible10(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Правою кнопкою миші натиснути на "Пуск" та зайти в "Панель Управління">><br><br>"Мережа та інтернет">> "Центр управління мережами та спільним доступом" >> "Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати "Підключення до інтернету та натиснути "Далі" <br><br> "Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль, придумати назву підключення та натиснути "Підключити"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisible10(txt){
+	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
 function Help1332(txt){
 	document.getElementById('tip141').innerHTML='<h4>Зареєструвати заявку та передати відповідальній особі</h4>';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip161').innerHTML=''
+ 	document.getElementById('tip171').innerHTML=''
+ 	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link55").style.color = "";
 	document.getElementById("link56").style.color = RED;
 }
@@ -312,11 +719,13 @@ function Help1322(txt){
 	document.getElementById('tip132').innerHTML='<a onClick="Help13222()" id=link57>Ще один ОЛТ(PON)</a> | <a onClick="Help13221()" id=link58>Медіаконвертер</a>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link43").style.color = "";
 	document.getElementById("link44").style.color = RED;
 	document.getElementById("link45").style.color = "";
@@ -325,8 +734,11 @@ function Help1322(txt){
 function Help13221(txt){
 	document.getElementById('tip141').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4> <p> <a onClick="Help13231()" id=link6D>Роутер є</a> |<a onClick="Help13232()" id=link6E> Нема роутера</a> </p>';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
-	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link57").style.color = "";
 	document.getElementById("link58").style.color = RED;		
 }
@@ -336,37 +748,56 @@ function Help13231(txt){
 	document.getElementById("link6E").style.color = "";	
 }
 function Help13232(txt){
-	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного встановлення PPPoE</h4>';
+	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір",<br> скачати файл та запустити на виконання для автоматичного встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" id=link7G>172.20.0.6 недоступний</a></p>';
 	document.getElementById("link6D").style.color = "";
 	document.getElementById("link6E").style.color = RED;	
 }
 function Help13222(txt){
 	document.getElementById('tip141').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці до конкретного абонента</h4> <p><a onClick="Help13223()" id=link6B>Лінк є</a> | <a onClick="Help13233()" id=link6C>Лінку нема </a></p>';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
-	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link57").style.color = RED;
 	document.getElementById("link58").style.color = "";	
 }
 function Help13223(txt){
 	document.getElementById('tip151').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4> <p> <a onClick="Help13224()" id=link7D>Роутер є</a> | <a onClick="Help13225()" id=link7E> Нема роутера</a></p>';
+	document.getElementById('tip1511').innerHTML='';	
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link6B").style.color = RED;
 	document.getElementById("link6C").style.color = "";	
 }
 function Help13224(txt){
-	document.getElementById('tip161').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера</h4>';
+	document.getElementById('tip1511').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера</h4>';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link7D").style.color = RED;
 	document.getElementById("link7E").style.color = "";	
 }
 function Help13225(txt){
-	document.getElementById('tip161').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE</h4>';
+	document.getElementById('tip1511').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" id=link7G>172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link7D").style.color = "";
 	document.getElementById("link7E").style.color = RED;	
 }
 function Help13233(txt){
 	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку та передати відповідальній особі</h4>';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
-	document.getElementById('tip1611').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link6B").style.color = "";
 	document.getElementById("link6C").style.color = RED;	
 }
@@ -374,7 +805,11 @@ function HelpbaseRadio(txt){
 	document.getElementById('tip132').innerHTML='<h4>Віддалено зайти на базову станцію радіообладнання, прервірити налаштування та при<br>потребі відновити їх. Перевірити наявність радіолінку до абонента</h4> <p><a onClick="HelpLink()" id=link59> Лінк є </a>|<a onClick="HelpNoLink()" id=link5A> Лінку нема </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link43").style.color = "";
 	document.getElementById("link44").style.color = "";
 	document.getElementById("link45").style.color = RED;
@@ -382,8 +817,11 @@ function HelpbaseRadio(txt){
 }
 function HelpLink(txt){
 	document.getElementById('tip141').innerHTML='<h4>Віддалено зайти на антену клієнта та налаштувати PPPoE</h4>';
-	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link59").style.color = RED;
 	document.getElementById("link5A").style.color = "";
 }
@@ -395,10 +833,14 @@ function HelpNoLink(txt){
 	document.getElementById("link5A").style.color = RED;
 }
 function HelpSwitch(txt){
-	document.getElementById('tip132').innerHTML='<h4>Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>непрацює, то перезапустити</h4><p><a onClick="HelpPortWork()" id=link5B> Порт працює </a>|<a onClick="HelpPortNotwrk()" id=link5C> Порт непрацює </a></p>';
+	document.getElementById('tip132').innerHTML='<h4>Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>непрацює, то перезапустити</h4><p><a onClick="HelpPortWork()" id=link5B> Порт працює </a>|<a onClick="HelpPortNotwrk()" id=link5C> Порт не працює </a></p>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link43").style.color = "";
 	document.getElementById("link44").style.color = "";
 	document.getElementById("link45").style.color = "";
@@ -407,39 +849,65 @@ function HelpSwitch(txt){
 function HelpPortNotwrk(txt){
 	document.getElementById('tip141').innerHTML='<h4>Зареєструвати заявку та передати інженеру другого рівня</h4>';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link5B").style.color = "";
 	document.getElementById("link5C").style.color = RED;
 }
 function HelpPortWork(txt){
 	document.getElementById('tip141').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4><p><a onClick="HelpRouter()" id=link6F> Роутер є </a>|<a onClick="HelpNoRouter()" id=link6G> Нема роутера</a></p>';
 	document.getElementById('tip151').innerHTML='';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link5B").style.color = RED;
 	document.getElementById("link5C").style.color = "";
 }
 function HelpRouter(txt){
 	document.getElementById('tip151').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт та здійснити віддалене налаштування роутера</h4>';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link6F").style.color = RED;
 	document.getElementById("link6G").style.color = "";
 }
 function HelpNoRouter(txt){
-	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE</h4>';
+	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" id=link7G>172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip161').innerHTML = '';
+	document.getElementById('tip171').innerHTML='';
+	document.getElementById('tip181').innerHTML='';
+	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link6F").style.color = "";
 	document.getElementById("link6G").style.color = RED;
 }
 //--------------------------------------------------------------------------------------------------------
 function Help122(txt){
 	document.getElementById('tip121').innerHTML='<h4>Повідомити абонента про відсутність коштів та переключити на фінансовий відділ</h4>';
-	document.getElementById('tip131').innerHTML='';
+	document.getElementById('tip131').innerHTML = '';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML = '';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML = '';
+	document.getElementById('tip1411').innerHTML = '';
+	document.getElementById('tip142').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip15111').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML='';
 	document.getElementById("link21").style.color = "";
 	document.getElementById("link22").style.color = RED;
 }
@@ -453,6 +921,7 @@ function Help131(txt){document.getElementById('tip131').innerHTML='<h4>Пові�
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
 	document.getElementById("link31").style.color = RED;
 	document.getElementById("link32").style.color = "";
 	document.getElementById("link33").style.color = "";
@@ -681,8 +1150,11 @@ function Help3(txt){
 	document.getElementById('tip2').innerHTML='';
 	document.getElementById('tip121').innerHTML='';
 	document.getElementById('tip131').innerHTML='';
+	document.getElementById('tip1311').innerHTML = '';
+	document.getElementById('tip1312').innerHTML = '';
 	document.getElementById('tip132').innerHTML='';
 	document.getElementById('tip141').innerHTML='';
+	document.getElementById('tip1411').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip15111').innerHTML='';
@@ -691,6 +1163,8 @@ function Help3(txt){
 	document.getElementById('tip16111').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML = '';
+	document.getElementById('tip191').innerHTML = '';
+	document.getElementById('tipNoAccessChoose').innerHTML = '';
 	document.getElementById("link11").style.color = "";
 	document.getElementById("link12").style.color = "";
 	document.getElementById("link13").style.color = RED;
