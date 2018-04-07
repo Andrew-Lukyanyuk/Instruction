@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!--
+1. Стиснути відео
+
+
+
+ -->
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
@@ -15,11 +22,18 @@
 
 <div class="navbar bg-info navbar-inverse navbar-fixed-top">
 	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" >Аргоком</a>
+		<div class="navbar-header"><a class="navbar-brand" >Аргоком</a></div>
+		<span id="idClock"></span>
+		<div class="menu">
+			<div class="menu-header">Стандартні операції</div>
+			<ul>
+				<li><a href="menu1.html" target="blank">Перевірка лінка по оптоволокну</a></li>
+				<li><a href="menu2.html" target="blank">Пункт 2</a></li>
+				<li><a href="menu3.html" target="blank">Пункт 3</a></li>
+				<li><a href="menu4.html" target="blank">Створення абонента і заявки<br>на ремонт в програмі Userside</a></li>
+			</ul>
 		</div>
-			<span id="idClock"></span>
-			<button type="submit" class="btn btn-primary btn-sm"><a onclick="Collapse()">Згорнути</a></button>
+		<div class="btn btn-primary btn-sm" onclick="Collapse()"><a id="Collapse">Згорнути</a></div>
 	</div>
 </div>
 

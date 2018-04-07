@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Перевірка лінка по оптоволокну</title>
+</head>
+<body>
+<h1><center>Перевірка лінка по оптоволокну.</center></h1>
+В терміналі набрати команду "telnet", через пробіл вказати ІР до оптичного лінійного термінала, як параметр та натиснути "Enter".
+Далі ввести ім'я користувача і пароль. 
+Після успішного входу в систему набрати команду "ena 2"(в більшості випадків після цього треба ввести пароль, що дозволяє виконати цю привілейовану команду). Для перевірки зв'язку між провайдером і пристроєм клієнта можна скористатись командою "show mac add". Через пробіл ввести фізичну адресу клієнтського пристрою у форматі "ec08.6b39.6a9". Відповідь, показана на відео відповідає
+ситуації, коли немає зв'язку по оптиці.
+
+<center>
+<p>
+<video width="600" controls>
+ 	<source src="video/v1.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+</video>
+</p>
+</center>
+
+<p>
+
+</p>
+</p>
+
+<h3><center>1.1 Перевірка лінка по оптицію Лінк є</center></h3>
+<p>
+<center><h4>Kомандa  show mac add int epon</h4></center>	
+<center><video width="600" controls>
+	<source src="video/link.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+</video></center>
+</p>
+Якщо відомо з якого оптичного інтерфейса абонент підключався минуло разу лінк можна перевірити командою  show mac add int epon. Параметром виступає номер інтерфейса у форматі 0/1:13
+
+<hr>
+<p>
+	<center><h3>Перевірка підключених пристроїв </h3></center><br>
+	<center><video width="600" controls>
+	<source src="video/device_check.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+</video></center>
+</p>
+<hr>
+<p>
+	<center> <h3>Команда типу show epon int epon 0/3:13 onu ctc opt</h3><br> перевіряє рівнь сигнала до конкретного абонентського оптичного термінала.<br><br>
+	<img src="img/show_epon.jpg"><br>
+	Тут рівень сигнала в нормі!<br>
+	<p></p>
+	<img src="img/Reload1.jpg"><br>
+	<img src="img/Reload2.jpg"><br>
+	Перезавантаження оптичного термінала абонента.
+</center>
+</p>
+<hr>
+<h3><center>Короткі відомості про стан підключень до оптичного термінала.</center></h3><br>
+<center><img src="img/Conection_data.jpg"></center><br>
+<hr>
+
+<center><h3>Детальні відомості</h3></center><br>
+<center><img src="img/Detail_data.jpg"></center><br>
+<hr>
+<center><h3>Список активних абонентських терміналів.</h3></center><br>
+<center><img src="img/Active_terminal.jpg"></center><br>
+<hr>
+<center><h3>Список неактивних абонентських терміналів.</h3></center><br>
+<center><img src="img/Nonactive_terminal.jpg"></center><br>
+</body>
+</html>
