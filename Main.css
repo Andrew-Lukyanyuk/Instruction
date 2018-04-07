@@ -11,21 +11,85 @@
 #link7E, #link7G, #link81, #link82, #link83, #link84, #link85, #link86, #link87, #link88, #link91, #link92 {
 	 cursor:pointer; color:#006fd0; font-size: 15px;
 }
+.container{height:40px}
+#Collapse {
+	margin-left : -3px;
 
+	font-weight: 20;
+	font-size: 15px;
+}
+.btn{float:right;}
 .btn-sm {
-	height: 27px;
+	height: 30px;
+	width: 75px;
 }
 .navbar {
 	height: 37px;
-	color: #006fd0;
+	color: #4aabff;
+}
+.navbar-header{
+	width: 33.33%;
+	float:left
+
 }
 #idClock {
 	color: white;
-	font-size: 20px;
+	font-size: 25px;
+	text-align: center;width: 33.33%; float: left;
 }
 .navbar-brand {
-	font-size: 25px;
+	margin-top: -8px;
+	font-size: 33px;
 }
 h4 {
 	font-size: 18px;
+}
+
+.menu {
+	float:right;width:250px;height:200px;
+}
+.menu a:link,.menu a:hover,.menu a:visited{color:#fff;text-decoration:none;}
+.menu-header {
+	margin: 85px 0 0 0;
+	line-height: 30px;
+	text-align: center;
+	background: #3175b0;
+	cursor: pointer;
+	border: 1px solid #518dc1;
+	color: white;
+	border-radius: 4px;
+}
+
+.menu-header:hover  {
+	background: #006fd0;
+}
+
+.menu-header:hover + ul {
+	display: block;
+}
+
+
+.menu ul {
+	margin:1px 0 0 0;
+	display: none; padding:0;
+}
+
+.menu ul:hover {
+	display: block;
+	background: #006fd0;
+}
+
+.menu li {
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	background: #2f71aa;border: 1px solid #2f71aa;
+	cursor: pointer;    width: 250px;
+
+}
+
+.menu li:hover {
+	background: #006fd0;
+	border: 1px solid #518dc1;
+
 }
