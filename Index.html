@@ -27,8 +27,9 @@
 		<div class="menu">
 			<div class="menu-header">Стандартні операції</div>
 			<ul>
+				<li><a href=# onclick="HelpBase()" >Технічна підтримка</a></li>
 				<li><a href="menu1.html" target="blank">Перевірка лінка по оптоволокну</a></li>
-				<li><a href="menu2.html" target="blank">Пункт 2</a></li>
+				<li><a href="menu2.html" target="blank">Налаштування роутера,<br> підключеного через ЛАН-порт</a></li>
 				<li><a href="menu3.html" target="blank">Пункт 3</a></li>
 				<li><a href="menu4.html" target="blank">Створення абонента і заявки<br>на ремонт в програмі Userside</a></li>
 			</ul>
@@ -39,12 +40,7 @@
 
 
 <center>
-<p><b><h4>Перевірити дані клієнта</h4></b></p>
-<p><a onclick="Billing()" id="link01">Лінк в біллінг</a> | <a onclick="Surname()" id="link02">Прізвище</a> | <a onclick="NoData()" id="link03">Дані відсутні</a></p>
-<p id="tip0"></p> <p id="tip01"></p>
-<hr>
-
-
+<p id=tipbase></p>
  <p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tipNoAccess"></p> <p id="tipNoAccessChoose"></p> <p id="tip1311"></p> <p id="tip1312"></p> 				<p id="tip132"></p> <p id="tip141"></p> <p id="tip1411"></p>  <p id="tip142"></p> <p id="tip151"></p> <p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p> <p id="tip191"></p>
 </center>
 
@@ -70,7 +66,12 @@ function Clock()
 }
 Clock();
 
+function HelpBase(txt) {
+	document.getElementById("tipbase").innerHTML='<p><b><h4>Перевірити дані клієнта</h4></b></p><p><a onclick="Billing()" id="link01">Лінк в біллінг</a> | <a onclick="Surname()" id="link02">Прізвище</a> | <a onclick="NoData()" id="link03">Дані відсутні</a></p><p id="tip0"></p> <p id="tip01"></p><hr>';
+}
+
 function Collapse(txt) {
+	document.getElementById('tipbase').innerHTML='';
 	document.getElementById('tip0').innerHTML='';
 	document.getElementById('tip01').innerHTML='';
 	document.getElementById('tip1').innerHTML='';
@@ -322,7 +323,7 @@ function IPYesXP(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function IPNoXP(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisibleXP()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisibleXP()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisibleXP()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisibleXP()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
@@ -355,7 +356,7 @@ function IPYes(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function IPNo(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
@@ -388,7 +389,7 @@ function IPYes8(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function IPNo8(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible8()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible8()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible8()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible8()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
@@ -422,7 +423,7 @@ function IPYes10(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function IPNo10(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible10()" id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible10()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible10()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible10()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
@@ -579,7 +580,7 @@ function Help1341(txt){
 	document.getElementById("link6A").style.color = "";
 }
 function Help1342(txt){
-	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір",<br> скачати файл та запустити на виконання для автоматичного встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" id=link7G>Якщо 172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip151').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути закладку "Швидкий набір",<br> скачати файл та запустити на виконання для автоматичного встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" href=#tip161 id=link7G>Якщо 172.20.0.6 недоступний</a></p>';
  	document.getElementById('tip161').innerHTML=''
  	document.getElementById('tip171').innerHTML=''
 	document.getElementById('tip181').innerHTML=''
@@ -588,14 +589,14 @@ function Help1342(txt){
 	document.getElementById("link6A").style.color = RED;
 }
 function OLTSiteNoAccess(txt){
-	document.getElementById('tip161').innerHTML='<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="OLTWindowsXP()" id=link85>Windows XP</a> | <a onClick="OLTWindows7()" id=link86>Windows 7</a> | <a onClick="OLTWindows8()" id=link87>Windows 8/8.1</a> | <a onClick="OLTWindows10()" id=link88>Windows 10</a><p/>';
+	document.getElementById('tip161').innerHTML='<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="OLTWindowsXP()" href=#tip171 id=link85>Windows XP</a> | <a onClick="OLTWindows7()" href=#tip171 id=link86>Windows 7</a> | <a onClick="OLTWindows8()" href=#tip171 id=link87>Windows 8/8.1</a> | <a onClick="OLTWindows10()" href=#tip171 id=link88>Windows 10</a><p/>';
 	document.getElementById('tip171').innerHTML=''
  	document.getElementById('tip181').innerHTML=''
  	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link7G").style.color = RED;
 }
 function OLTWindowsXP(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYesXP()" id=link4A>Так</a> | <a onClick="OLTIPNoXP()" id=link4B>Ні</a></p>';
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYesXP()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNoXP()" href=#tip181 id=link4B>Ні</a></p>';
 	document.getElementById('tip181').innerHTML=''
  	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link85").style.color = RED;
@@ -610,7 +611,7 @@ function OLTIPYesXP(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function OLTIPNoXP(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisibleXP()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisibleXP()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisibleXP()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisibleXP()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
 }
@@ -626,7 +627,7 @@ function OLTMACNotvisibleXP(txt){
 }
 
 function OLTWindows7(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes7()" id=link4A>Так</a> | <a onClick="OLTIPNo7()" id=link4B>Ні</a></p>';
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes7()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo7()" href=#tip181 id=link4B>Ні</a></p>';
 	document.getElementById('tip181').innerHTML=''
  	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link85").style.color = "";
@@ -641,7 +642,7 @@ function OLTIPYes7(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function OLTIPNo7(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible7()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible7()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible7()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible7()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
 }
@@ -657,7 +658,7 @@ function OLTMACNotvisible7(txt){
 }
 
 function OLTWindows8(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes8()" id=link4A>Так</a> | <a onClick="OLTIPNo8()" id=link4B>Ні</a></p>';
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes8()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo8()" href=#tip181 id=link4B>Ні</a></p>';
 	document.getElementById('tip181').innerHTML=''
  	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link85").style.color = "";
@@ -672,7 +673,7 @@ function OLTIPYes8(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function OLTIPNo8(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible8()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible8()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible8()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible8()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
@@ -689,7 +690,7 @@ function OLTMACNotvisible8(txt){
 }
 
 function OLTWindows10(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes10()" id=link4A>Так</a> | <a onClick="OLTIPNo10()" id=link4B>Ні</a></p>';
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes10()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo10()" href=#tip181 id=link4B>Ні</a></p>';
 	document.getElementById('tip181').innerHTML=''
  	document.getElementById('tip191').innerHTML=''
 	document.getElementById("link85").style.color = "";
@@ -704,7 +705,7 @@ function OLTIPYes10(txt){
 	document.getElementById("link4B").style.color = "";
 }
 function OLTIPNo10(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible10()" id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible10()" id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible10()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible10()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
 	document.getElementById('tip191').innerHTML='';
 	document.getElementById("link4A").style.color = "";
 	document.getElementById("link4B").style.color = RED;
@@ -798,7 +799,7 @@ function Help13224(txt){
 	document.getElementById("link7E").style.color = "";	
 }
 function Help13225(txt){
-	document.getElementById('tip1511').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" id=link7G>Якщо 172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip1511').innerHTML='<h4>Запропонувати абоненту запустити браузер та набрати адресу 172.20.0.6, натиснути<br> закладку "Швидкий набір", скачати файл та запустити на виконання для автоматичного<br> встановлення PPPoE</h4><p><a onClick="OLTSiteNoAccess()" href=#tip161 id=link7G>Якщо 172.20.0.6 недоступний</a></p>';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML='';
@@ -821,6 +822,7 @@ function HelpbaseRadio(txt){
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip1511').innerHTML='';
+	document.getElementById('tip15111').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
 	document.getElementById('tip181').innerHTML='';

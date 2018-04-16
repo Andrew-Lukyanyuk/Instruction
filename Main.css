@@ -93,3 +93,13 @@ h4 {
 	border: 1px solid #518dc1;
 
 }
+
+@media (max-width: 1280px){
+#idClock{width:auto}
+
+}
+
+@media (max-width: 865px){
+#idClock{display:none}
+
+}
