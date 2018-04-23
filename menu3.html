@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<title>Налаштування PPPoE</title>
 </head>
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+	<link rel="stylesheet" href="Main.css">
 <center><h1>Налаштування PPPoE</h1>
 	<hr>
 <h3>Попросити абонента :</h3>
@@ -17,6 +22,146 @@
 	6 Після встановлення з'єднання з інтернетом, на сайті Fast.com виконати тест швидкості<br><br>
 	7 Якщо швидкість менша тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98<br><br>
 </div>
+<hr>
+<p><h2>Якщо 172.20.0.6 недоступний</h2></p>
+<p id="tip161"><h4>Уточнити яка операційна система у абонента</h4><p><a onClick="OLTWindowsXP()" href=#tip171 id=link85>Windows XP</a> | <a onClick="OLTWindows7()" href=#tip171 id=link86>Windows 7</a> | <a onClick="OLTWindows8()" href=#tip171 id=link87>Windows 8/8.1</a> | <a onClick="OLTWindows10()" href=#tip171  id=link88>Windows 10</a><p/></p>
+<p id="tip171"></p><p id="tip181"></p><p id="tip191"></p>
+
+<script type="text/javascript">
+
+var RED="#ab0918";
+
+	function OLTWindowsXP(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYesXP()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNoXP()" href=#tip181 id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = RED;
+	document.getElementById("link86").style.color = "";
+ 	document.getElementById("link87").style.color = "";
+	document.getElementById("link88").style.color = "";
+
+}
+function OLTIPYesXP(txt){
+	document.getElementById('tip181').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById('tip191').innerHTML=''	
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNoXP(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisibleXP()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisibleXP()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisibleXP(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisibleXP(txt){
+	document.getElementById('tip191').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function OLTWindows7(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes7()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo7()" href=#tip181 id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = "";
+	document.getElementById("link86").style.color = RED;
+ 	document.getElementById("link87").style.color = "";
+	document.getElementById("link88").style.color = "";
+}
+function OLTIPYes7(txt){
+	document.getElementById('tip181').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNo7(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible7()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible7()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisible7(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisible7(txt){
+	document.getElementById('tip191').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function OLTWindows8(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes8()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo8()" href=#tip181 id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = "";
+	document.getElementById("link86").style.color = "";
+ 	document.getElementById("link87").style.color = RED;
+	document.getElementById("link88").style.color = "";
+}
+function OLTIPYes8(txt){
+	document.getElementById('tip181').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNo8(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible8()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible8()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisible8(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути правою кнопкою на "Пуск" та зайти в "Панель Управління"<br><br>Далі послідовно вибрати "Мережа та інтернет" >> "Центр управління мережами та спільним доступом"<br><br>"Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати пункт "Підключення до інтернету" та натиснути "Далі"<br><br>"Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль та придумати назву підключення<br><br>Натиснути кнопку "Підключитись"<p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisible8(txt){
+	document.getElementById('tip191').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+
+function OLTWindows10(txt){
+	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes10()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo10()" href=#tip181 id=link4B>Ні</a></p>';
+	document.getElementById('tip181').innerHTML=''
+ 	document.getElementById('tip191').innerHTML=''
+	document.getElementById("link85").style.color = "";
+	document.getElementById("link86").style.color = "";
+ 	document.getElementById("link87").style.color = "";
+	document.getElementById("link88").style.color = RED;
+}
+function OLTIPYes10(txt){
+	document.getElementById('tip181').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = RED;
+	document.getElementById("link4B").style.color = "";
+}
+function OLTIPNo10(txt){
+	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible10()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible10()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
+	document.getElementById('tip191').innerHTML='';
+	document.getElementById("link4A").style.color = "";
+	document.getElementById("link4B").style.color = RED;
+}
+function OLTMACvisible10(txt){
+	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Правою кнопкою миші натиснути на "Пуск" та зайти в "Панель Управління">><br><br>"Мережа та інтернет">> "Центр управління мережами та спільним доступом" >> "Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати "Підключення до інтернету та натиснути "Далі" <br><br> "Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль, придумати назву підключення та натиснути "Підключити"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
+	document.getElementById("link5F").style.color = RED;
+	document.getElementById("link5G").style.color = "";
+}
+function OLTMACNotvisible10(txt){
+	document.getElementById('tip191').innerHTML='<h4><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідному монтажнику</a></h4>';
+	document.getElementById("link5F").style.color = "";
+	document.getElementById("link5G").style.color = RED;
+}
+</script>
+
+
 </center>
 </body>
 </html>
