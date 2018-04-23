@@ -310,7 +310,7 @@ function NoAccess(txt){
 	document.getElementById('tip181').innerHTML = '';
 	document.getElementById("tipNoAccessChoose").style.color = RED;
 }
-
+/*
 function WindowsXP(txt){
 	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYesXP()" id=link4A>Так</a> | <a onClick="IPNoXP()" id=link4B>Ні</a></p>';
 	document.getElementById('tip1411').innerHTML='';
@@ -443,7 +443,7 @@ function MACNotvisible10(txt){
 	document.getElementById("link5F").style.color = "";
 	document.getElementById("link5G").style.color = RED;
 }
-
+*/
 
 function HelpLoSpeedNoRouter(txt){	
 	document.getElementById('tip2').innerHTML=' <h4><a href=menu3.html target="blank">Налаштування РРРоЕ</a></h4> ';
@@ -464,6 +464,7 @@ function HelpLoSpeedNoRouter(txt){
 	document.getElementById("link23").style.color = "";
 	document.getElementById("link24").style.color = RED;
 }
+
 	// --------------------------------------Сесія завершена-------------------------------------------
 	
 function Help132(txt){
@@ -525,7 +526,7 @@ function MAC_Visible(txt){
 	document.getElementById("link5E").style.color = "";
 }
 function MAC_NotVisible(txt){
-	document.getElementById('tip141').innerHTML='<h4>Попросити абонента :</h4>переставити кабель напряму в комп\'ютер<p><br>Запустити браузер та набрати адресу 172.20.0.6</p><p>Відкрити закладку "Швидкий набір" та скачати файл Argocom.exe </p><p>Запустити на виконання для автоматичного встановлення PPPoE</p><p><h4><a href=menu3.html target="blank">Налаштування РРРоЕ вручну	</a></h4><br><a onClick="OLTSiteNoAccess()" id=link7G>Якщо 172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip141').innerHTML='<h4>Попросити абонента переставити кабель напряму в комп\'ютер</h4><h4><a href=menu3.html target="blank">Налаштування РРРоЕ </a></h4>';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip1611').innerHTML = '';
@@ -537,7 +538,7 @@ function MAC_NotVisible(txt){
 	document.getElementById("link5E").style.color = RED;
 }
 function Help133NoRouter(txt){
-	document.getElementById('tip132').innerHTML='<h4>Попросити абонента :</h4><p>Запустити браузер та набрати адресу 172.20.0.6</p><p>Відкрити закладку "Швидкий набір" та скачати файл Argocom.exe </p><p>Запустити на виконання для автоматичного встановлення PPPoE</p><p><h4><a href=menu3.html target="blank">Налаштування РРРоЕ</a></h4><br><a onClick="OLTSiteNoAccess()" id=link7G>Якщо 172.20.0.6 недоступний</a></p>';
+	document.getElementById('tip132').innerHTML='<h4><a href=menu3.html target="blank">Налаштування РРРоЕ</a></h4><br>';
 	document.getElementById('tip141').innerHTML = '';
 	document.getElementById('tip151').innerHTML='';
 	document.getElementById('tip1511').innerHTML='';
@@ -841,7 +842,7 @@ function HelpbaseRadio(txt){
 	document.getElementById("link46").style.color = "";
 }
 function HelpLink(txt){
-	document.getElementById('tip141').innerHTML='<h4>Віддалено зайти на антену клієнта та налаштувати PPPoE</h4>';
+	document.getElementById('tip141').innerHTML='<h4><a href=menu6.html target="blank">Віддалено зайти на антену клієнта та налаштувати PPPoE</a></h4>';
 	document.getElementById('tip1511').innerHTML='';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById('tip171').innerHTML='';
@@ -1049,7 +1050,7 @@ function Help153(txt) {
 	document.getElementById("link65").style.color = RED;
 	document.getElementById("link66").style.color = "";
 	}
-	function Help1631(txt) { document.getElementById('tip15111').innerHTML = '<h4>Здійснити віддалене налаштування антени</h4>';
+	function Help1631(txt) { document.getElementById('tip15111').innerHTML = '<h4><a href=menu6.html target="blank">Здійснити віддалене налаштування антени</a></h4>';
 	document.getElementById("link65").style.color = "";
 	document.getElementById("link66").style.color = RED;
 	}
@@ -1159,7 +1160,7 @@ function Help161(txt) {
 		document.getElementById("link91").style.color = "";
 		document.getElementById("link92").style.color = RED;
  	}
- 	function Help182(txt) { document.getElementById('tip181').innerHTML = '<h4>Повідомити абонента, що рівень сигналу в нормі та попросити перезавантажити комп\'ютер</h4>';
+ 	function Help182(txt) { document.getElementById('tip181').innerHTML = '<h4>Повідомити абонента, що рівень сигналу в нормі та попросити перезавантажити комп\'ютер<br> Якщо не допомогло, то <br><a href=menu4.html target="blank">Зареєструвати заявку на ремонт та передати відповідальній особі</a></h4>';
 		document.getElementById("link91").style.color = RED;
 		document.getElementById("link92").style.color = "";
  	}
@@ -1167,7 +1168,7 @@ function Help161(txt) {
 	document.getElementById("link71").style.color = RED;
 	document.getElementById("link72").style.color = "";
 }
-	function Help1711(txt) { document.getElementById('tip171').innerHTML = '<h4><a href=menu2.html target="blank">Попросити абонента переставити кабель в LAN-порт і здійснити віддалене налаштування роутера</a></h4>';
+	function Help1711(txt) { document.getElementById('tip171').innerHTML = '<h4>Попросити абонента переставити кабель в LAN-порт і <a href=menu2.html target="blank"><br>Здійснити віддалене налаштування роутера</a></h4>';
 	document.getElementById("link71").style.color = "";
 	document.getElementById("link72").style.color = RED;
 }
