@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Налаштування роутера</title>
+</head>
+<body>
+<link rel="stylesheet" href="../main.css">
+<center>
+<div id="fontstyle">
+<h1>Налаштування роутера, підключеного через ЛАН-порт</h1><br>
+</center>
+
+<div id="settingRouter">
+Визначити в Юзерсайді віртуальну мережу, в якій перебуває роутер.<br><br>
+Виконати послідовність команд :<br><br>
+1	Отримати права суперкористувача											<b>sudo -s</b><br><br>
+2	Додати мережеву карту з ідентифікатором <b>eth1 у 634</b> віртуальну мережу			<b>vconfig add eth1 634</b><br><br>
+3	Призначити мережевому інтерфейсу у мережі певну адресу з маскою				<b>ifconfig eth1.634 inet 192.168.1.99/24</b><br><br>
+4	Створити новий запис таблиці адрес											<b>arp -s 192.168.1.1 04:8D:38:87:46:4E</b><br><br>
+5	Перевірити лінк до роутера													<b>ping 192.168.1.1</b><br><br>
+6	Вилучити мережеву карту з віртуальної мережі								<b>vconfig rem eth1.634</b><br><br>
+
+ Зайти в налаштування роутера за адресою 192.168.1.1 або 192.168.0.1.<br>
+
+</div>
+ В налаштуваннях треба вказати тип підключення: PPPoE, імя користувача і пароль з білінга, імя сервіса: inet. (В роутерах Нетіс замість імені сервіса, вказати ім'я сервера.)
+
+
+<hr>
+<center>
+<h2>Перевірка налаштувань TP-Link</h2>
+	<video width="600" controls>
+	<source src="../video/tplink.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+</video>
+<hr>
+<h2>Перевірка налаштувань Netis</h2>
+	<video width="600" controls>
+	<source src="../video/netis.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+</video>
+</div>
+</center>
+</body>
+</html>
