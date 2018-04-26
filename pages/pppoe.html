@@ -14,7 +14,7 @@
 <h3>Попросити абонента :</h3>
 <div>
 <h4> Відключити програми типу VPN та Proxy<br><br>
-	 Набрати в браузері адресу сайту <b>172.20.0.6</b>
+	 Набрати в браузері адресу сайту <b><a href=172.20.0.6 target="blank">172.20.0.6</a></b>
 </h4>
 	<p><a onclick="siteAvailable()" id="siteA"> Сайт доступний</a> |<a onclick="siteNotAvailable()" id="siteN"> Сайт не доступний</a></p>
 	<p id="site"></p>
@@ -28,7 +28,7 @@ var RED="#ab0918";
 
 
 function siteAvailable(txt){
-	document.getElementById('site').innerHTML='<h4>Натиснути закладку "Швидкий набір"<br><br><img src="../img/rapid.jpg"><br><br>Скопіювати собі на комп\'ютер файл Argocom.exe<br><br>Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані<br><br>По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись великих та маленьких літер та натиснути кнопку "Підключити"<br><br>Після встановлення з\'єднання з інтернетом, на сайті Fast.com виконати тест швидкості<br><br>Якщо швидкість менша 	тарифної, то із сайту 172.20.0.6 скачати програму TeamViewer і зателефонувати на номер техпідтримки, який можна знайти на сайті  http://a1./?page_id=98<br><br></h4>';
+	document.getElementById('site').innerHTML='<h4>Натиснути закладку "Швидкий набір"<br><br><img src="../img/rapid.jpg"><br><br>Скопіювати собі на комп\'ютер файл Argocom.exe<br><br>Запустити на виконання Argocom.exe та виконати вказівки до налаштувань, які там запропоновані<br><br>По завершенню ввести ім\'я користувача та пароль англійською мовою, дотримуючись великих та маленьких літер та натиснути кнопку "Підключити"<br><br>Після встановлення з\'єднання з інтернетом, на сайті <a href=https://fast.com/ targret="blank">Fast.com</a> виконати тест швидкості<br><br>Якщо швидкість менша 	тарифної, то із сайту <a href=172.20.0.6 target="blank">172.20.0.6</a> скачати програму <a href=https://www.teamviewer.com/uk/download/windows/ target="blank">TeamViewer</a> і зателефонувати на номер техпідтримки, який можна знайти на сайті  <a href=http://a1./?page_id=98 target="blank">http://a1./?page_id=98</a><br><br></h4>';
 	document.getElementById('tip171').innerHTML=''	
 	document.getElementById('tip181').innerHTML=''	
 	document.getElementById('tip191').innerHTML=''	
