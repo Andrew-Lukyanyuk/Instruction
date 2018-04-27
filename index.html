@@ -237,12 +237,21 @@ function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Пере�
 }
 	// --------------------------------------Низька швидкість-------------------------------------------
 function HelpLoSpeed(txt){
+	document.getElementById('tip1').innerHTML='<h4>Можливі три випадки :</h4> Пасивна оптична мережа (PON) | Pадіозв’язок | Bсе інше <br><br><p> Скопіювати мак-адресу з білінгу. За нею здійснити пошук в Юзерсайді.<br> Якщо пошук видає результи типу OLT ... epon0/... , то це несправність PON.</p>Якщо в білінгу вказано, що цей абонент користується радіозвязком, то це несправність радіозв\'язку<p><video width="600" controls>	<source src="video/lospeed.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></p>Далі треба зайти список пристроїв, підключених до відповідного оптичного лінійного термінала і подивитись рівень сигнала до абонента, що скаржиться.<br> Низькі сигнали (-29 і менше) виділені червоним. У такому випадку <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. ';
+	t2andLow();
+	document.getElementById("link11").style.color = "";
+	document.getElementById("link12").style.color = RED;
+	document.getElementById("link13").style.color = "";
+}
+
+/*function HelpLoSpeed(txt){
 	document.getElementById('tip1').innerHTML='<h4>На основі MAC-адреси останнього підключення визначити наявність роутера</h4> <p> <a onclick="HelpLoSpeedRouter()" id=link23>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()" href=#tip2 id=link24> Нема роутера</a></p> ';
 	t2andLow();
 	document.getElementById("link11").style.color = "";
 	document.getElementById("link12").style.color = RED;
 	document.getElementById("link13").style.color = "";
 }
+*/
 function HelpLoSpeedRouter(txt){	
 	document.getElementById('tip2').innerHTML=' <h4><a href=pages/wan.html target="blank"> Налаштування РРРоЕ</a></h4> ';
 	t121andLow();
