@@ -237,15 +237,39 @@ function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Пере�
 }
 	// --------------------------------------Низька швидкість-------------------------------------------
 function HelpLoSpeed(txt){
-	document.getElementById('tip1').innerHTML='<h4>Можливі три випадки :</h4> Пасивна оптична мережа (PON) | Pадіозв’язок | Bсе інше <br><br><p> Скопіювати мак-адресу з білінгу. За нею здійснити пошук в Юзерсайді.<br> Якщо пошук видає результи типу OLT ... epon0/... , то це несправність PON.</p>Якщо в білінгу вказано, що цей абонент користується радіозвязком, то це несправність радіозв\'язку<p><video width="600" controls>	<source src="video/lospeed.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></p>Далі треба зайти список пристроїв, підключених до відповідного оптичного лінійного термінала і подивитись рівень сигнала до абонента, що скаржиться.<br> Низькі сигнали (-29 і менше) виділені червоним. У такому випадку <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. ';
+	document.getElementById('tip1').innerHTML='<p> <h4>Скопіювати MAC-адресу з білінгу. За нею здійснити пошук в Юзерсайді</h4><br><p><video width="600" controls>	<source src="video/lospeed.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></p><br> Якщо в білінгу вказано, що це GEPON, або якщо пошук за MAC-адресою видає результи типу OLT ... epon0/... , то прейти  за лінком "Пасивна оптична мережа (PON)"<br>Якщо в білінгу вказано, що цей абонент користується радіозвязком, то прейти  за лінком "Радіозв\'язок" <br>Якщо наявність пасивної оптичної мережі або радіозвязку не встановлено, то перейти за лінком "Все інше"<br> <a onclick="lowSpeedPon()" href=#tip2 id=link14 >Пасивна оптична мережа (PON)</a> | <a onclick="lowSpeedRadio()" href=#tip2 id=link15>Радіозв\'язок </a> | <a onclick=allOther() href=#tip2 id=link16 >Bсе інше</a> </p>';
 	t2andLow();
 	document.getElementById("link11").style.color = "";
 	document.getElementById("link12").style.color = RED;
 	document.getElementById("link13").style.color = "";
 }
 
+function lowSpeedPon(txt){
+	document.getElementById('tip2').innerHTML='Знайти список пристроїв, підключених до відповідного оптичного лінійного термінала і подивитись рівень сигнала до абонента, що скаржиться.<br> Низькі сигнали (-29 і менше) виділені червоним. У такому випадку <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. ';
+	t121andLow();
+	document.getElementById("link14").style.color = RED;
+	document.getElementById("link15").style.color = "";
+	document.getElementById("link16").style.color = "";
+}
+
+function lowSpeedRadio(txt){
+	document.getElementById('tip2').innerHTML='<center><img src=img/radio.png></center>';
+	t121andLow();
+	document.getElementById("link14").style.color = "";
+	document.getElementById("link15").style.color = RED;
+	document.getElementById("link16").style.color = "";
+}
+
+function allOther(txt){
+	document.getElementById('tip2').innerHTML='<h4>На основі MAC-адреси останнього підключення визначити наявність роутера</h4> <p> <a onclick="HelpLoSpeedRouter()" href=#tip121 id=link23>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()"href=#tip121 id=link24> Нема роутера</a></p>';
+	t121andLow();
+	document.getElementById("link14").style.color = "";
+	document.getElementById("link15").style.color = "";
+	document.getElementById("link16").style.color = RED;
+}
+
 /*function HelpLoSpeed(txt){
-	document.getElementById('tip1').innerHTML='<h4>На основі MAC-адреси останнього підключення визначити наявність роутера</h4> <p> <a onclick="HelpLoSpeedRouter()" id=link23>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()" href=#tip2 id=link24> Нема роутера</a></p> ';
+	document.getElementById('tip1').innerHTML=' ';
 	t2andLow();
 	document.getElementById("link11").style.color = "";
 	document.getElementById("link12").style.color = RED;
@@ -253,11 +277,19 @@ function HelpLoSpeed(txt){
 }
 */
 function HelpLoSpeedRouter(txt){	
-	document.getElementById('tip2').innerHTML=' <h4><a href=pages/wan.html target="blank"> Налаштування РРРоЕ</a></h4> ';
-	t121andLow();
+	document.getElementById('tip121').innerHTML=' <h4>Деякий текст</h4> ';
+	t131andLow();
 	document.getElementById("link23").style.color = RED;
 	document.getElementById("link24").style.color = "";
 }
+
+function HelpLoSpeedNoRouter(txt){	
+	document.getElementById('tip121').innerHTML=' <h4>Some text</h4> ';
+	t131andLow();
+	document.getElementById("link23").style.color = "";
+	document.getElementById("link24").style.color = RED;
+}
+
 function NoAccess(txt){ 
 	document.getElementById('tip1311').innerHTML = '<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="WindowsXP()" id=link4C>Windows XP</a> | <a onClick="Windows7()" id=link4D>Windows 7</a> | <a onClick="Windows8()" id=link4E>Windows 8/8.1</a> | <a onClick="Windows10()" id=link4F>Windows 10</a><p/>';
 	document.getElementById('tip2').innerHTML='';
@@ -402,13 +434,7 @@ function MACNotvisible10(txt){
 }
 */
 
-function HelpLoSpeedNoRouter(txt){	
-	document.getElementById('tip2').innerHTML=' <h4><a href=pages/pppoe.html target="blank">???---???</a></h4> ';
-	t121andLow();
-	document.getElementById('tip1411').innerHTML = '';
-	document.getElementById("link23").style.color = "";
-	document.getElementById("link24").style.color = RED;
-}
+
 
 	// --------------------------------------Сесія завершена-------------------------------------------
 	
