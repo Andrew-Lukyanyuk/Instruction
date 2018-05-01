@@ -1,3 +1,4 @@
+body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}
 
 #link01, #link02, #link03, #link021, #link022, #link33, 
 #link11, #link12, #link13, #link14, #link15, #link16, #link21, #link22, #link23, #link24,
@@ -10,7 +11,7 @@
 #link77, #link78, #link79, #link7A, #link7B, #link7C, #link7D,
 #link7E, #link7G, #link81, #link82, #link83, #link84, #link85,
 #link86, #link87, #link88, #link91, #link92, #UBNT, #siteA, #siteN, #gport,
-#billing, #notrespond, #nodata, #netpppoe {
+#billing, #notrespond, #nodata, #netpppoe, #speed1, #speed2, #speed3, #speed4, #speed5, #speed6, #speed7  {
 	 cursor:pointer; color:#006fd0; font-size: 15px; text-decoration: none;
 }
 
@@ -18,10 +19,6 @@
 	white-space: pre;
 	text-align: left;
 	font-size: 18px;
-}
-
-#fontstyle {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .container{
