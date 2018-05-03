@@ -238,7 +238,7 @@ function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Пере�
 }
 	// --------------------------------------Низька швидкість-------------------------------------------
 function HelpLoSpeed(txt){
-	document.getElementById('tip1').innerHTML='<p> <h4>Скопіювати MAC-адресу з білінгу. За нею здійснити пошук в Юзерсайді</h4><br><p><video width="600" controls>	<source src="video/lospeed.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></p><br> Якщо в білінгу вказано, що це GEPON, або якщо пошук за MAC-адресою видає результи типу OLT ... epon0/... , то прейти  за лінком "Пасивна оптична мережа (PON)"<br>Якщо в білінгу вказано, що цей абонент користується радіозвязком, то прейти  за лінком "Радіозв\'язок" <br>Якщо наявність пасивної оптичної мережі або радіозвязку не встановлено, то перейти за лінком "Все інше"<br> <a onclick="lowSpeedPon()" href=#tip2 id=link14 >Пасивна оптична мережа (PON)</a> | <a onclick="lowSpeedRadio()" href=#tip2 id=link15>Радіозв\'язок </a> | <a onclick=allOther() href=#tip2 id=link16 >Bсе інше</a> </p>';
+	document.getElementById('tip1').innerHTML='<p> <h4>Скопіювати MAC-адресу з білінгу. За нею здійснити пошук в Юзерсайді</h4><br><p><video width="600" controls>	<source src="video/lospeed.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></p><br> Якщо в білінгу вказано, що це GEPON, або якщо пошук за MAC-адресою видає результи типу OLT ... epon0/... , то прейти  за лінком "Пасивна оптична мережа (PON)"<br><br><img src=img/radio.png><br>Якщо в білінгу вказано, що цей абонент користується радіозвязком, то прейти  за лінком "Радіозв\'язок" <br>Якщо наявність пасивної оптичної мережі або радіозвязку не встановлено, то перейти за лінком "Все інше"<br> <a onclick="lowSpeedPon()" href=#tip2 id=link14 >Пасивна оптична мережа (PON)</a> | <a onclick="lowSpeedRadio()" href=#tip2 id=link15>Радіозв\'язок </a> | <a onclick=allOther() href=#tip2 id=link16 >Bсе інше</a> </p>';
 	t2andLow();
 	document.getElementById("link11").style.color = "";
 	document.getElementById("link12").style.color = RED;
@@ -254,7 +254,7 @@ function lowSpeedPon(txt){
 }
 
 function lowSpeedRadio(txt){
-	document.getElementById('tip2').innerHTML='<center>Отримати ІР антени абонента в білінгу. За цією адресою перейти на веб-інтерфейс антени.<br><br><img src=img/radio.png><br><br> Перевірити рівень сигнала. Якщо рівень сигнала -69 і гірше (підсвічено червоним), то <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. Інакше перейти в пункт "<a onclick=allOther() href=#tip2 >Все інше</a>".</center>';
+	document.getElementById('tip2').innerHTML='<center>Отримати ІР антени абонента в білінгу. За цією адресою перейти на веб-інтерфейс антени.<br><h4><a href=pages/ubnt.html target="blank">Налаштування антени</a></h4> Перевірити рівень сигнала. Якщо рівень сигнала -69 і гірше (підсвічено червоним), то <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. Інакше перейти в пункт "<a onclick=allOther() href=#tip2 >Все інше</a>".</center>';
 	t121andLow();
 	document.getElementById("link14").style.color = "";
 	document.getElementById("link15").style.color = RED;
@@ -495,6 +495,7 @@ function Help1342(txt){
  	document.getElementById("link69").style.color = "";
 	document.getElementById("link6A").style.color = RED;
 }
+/*
 function OLTSiteNoAccess(txt){
 	document.getElementById('tip161').innerHTML='<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="OLTWindowsXP()" href=#tip171 id=link85>Windows XP</a> | <a onClick="OLTWindows7()" href=#tip171 id=link86>Windows 7</a> | <a onClick="OLTWindows8()" href=#tip171 id=link87>Windows 8/8.1</a> | <a onClick="OLTWindows10()" href=#tip171  id=link88>Windows 10</a><p/>';
 	t171andLow();
@@ -621,7 +622,7 @@ function OLTMACNotvisible10(txt){
 	document.getElementById("link5F").style.color = "";
 	document.getElementById("link5G").style.color = RED;
 }
-
+*/
 function Help1332(txt){
 	document.getElementById('tip141').innerHTML='<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати відповідальній особі</a></h4>';
 	t151andLow();
