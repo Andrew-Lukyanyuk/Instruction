@@ -46,6 +46,10 @@ body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica
 	width: 120px;
 	font-size: 15px;
 }
+#instruction {
+	width: 170px;
+	font-size: 15px;
+}
 .navbar {
 	height: 37px;
 	color: #4aabff;

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
+<script type="text/javascript">autentification();</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
 <link rel="stylesheet" href="main.css">
@@ -15,8 +16,9 @@
 
 <div class="navbar bg-info navbar-inverse navbar-fixed-top">
 	<div class="container">
-		<div class="navbar-header"><a class="navbar-brand" >Аргоком</a></div>
+		
 		<span id="idClock" style="display: none;"></span>
+		<a href=pages/instruction.html target="blank"><div class="btn btn-primary btn-sm support"  id="instruction"> Посадова інструкція</div></a>
 		<div class="btn btn-primary btn-sm support" onclick="HelpBase()" id="support">Тех-підтримка</div>
 		<div class="menu">
 			
@@ -28,7 +30,7 @@
 				<li><a href="pages/pppoe.html" target="blank">Налаштування PPPoE</a></li>
 				<li><a href="pages/netcard.html" target="blank">Налаштування мережевої карти</a></li>
 				<li><a href="pages/ubnt.html" target="blank">Перевірка налаштувань антени UBNT</a></li>
-				<li><a href="pages/conectionSpeed.html" target="blank">Відновлення швидкості зв'язку</a></li>
+				<li><a href="pages/conectionSpeed.html" target="blank">Діагностика швидкості зв'язку</a></li>
 				<li><a href="pages/userside.html" target="blank">Додавання абонентів і заявок в програмі Userside</a></li>
 			</ul>
 		</div>
@@ -270,14 +272,14 @@ function allOther(txt){
 }
 
 function HelpLoSpeedRouter(txt){	
-	document.getElementById('tip121').innerHTML=' Попросити абонента набрати в браузері сайт 172.20.0.6<br> Якщо сайт доступний, то скачати файл Argocom.exe за лінком "Швидка підтримка" <br> Переставити кабель з WAN-порта (він зазвичай синій) напряму в мережеву карту<br> <h4><a href=pages/conectionSpeed.html target="blank">Відновлення швидкості зв\'язку</a></h4>Якщо сайт недоступний, то одразу переставити інтернет-кабель у мережеву карту та перейти за лінком <h4><a href=pages/conectionSpeed.html target="blank">Відновлення швидкості зв\'язку</a></h4>';
+	document.getElementById('tip121').innerHTML=' Попросити абонента набрати в браузері сайт 172.20.0.6<br> Якщо сайт доступний, то скачати файл Argocom.exe за лінком "Швидка підтримка" <br> Переставити кабель з WAN-порта (він зазвичай синій) напряму в мережеву карту<br> <h4><a href=pages/conectionSpeed.html target="blank">Діагностика швидкості зв\'язку</a></h4>Якщо сайт недоступний, то одразу переставити інтернет-кабель у мережеву карту та перейти за лінком <h4><a href=pages/conectionSpeed.html target="blank">Діагностика швидкості зв\'язку</a></h4>';
 	t131andLow();
 	document.getElementById("link23").style.color = RED;
 	document.getElementById("link24").style.color = "";
 }
 
 function HelpLoSpeedNoRouter(txt){	
-	document.getElementById('tip121').innerHTML=' <h4><a href=pages/conectionSpeed.html id="speed" target="blank">Відновлення швидкості звя\'зку</a></h4>';
+	document.getElementById('tip121').innerHTML=' <h4><a href=pages/conectionSpeed.html id="speed" target="blank">Діагностика швидкості звя\'зку</a></h4>';
 	t131andLow();
 	document.getElementById("link23").style.color = "";
 	document.getElementById("link24").style.color = RED;
@@ -890,6 +892,19 @@ function Help161(txt) {
 	
 		document.getElementById("link61").style.color = "";
 		document.getElementById("link62").style.color = RED;
+	}
+	function autentification(){
+	var password = prompt("Please enter password");
+	while (password!="correct")
+	{
+		password = prompt("Wrong password please enter again");
+	}
+	}
+
+	var password = prompt("Please enter password");
+	while (password!="correct")
+	{
+		password = prompt("Wrong password please enter again");
 	}
 	function Help16111(txt) {
 		document.getElementById('tip16111').innerHTML = '<h4>Подякувати та попрощатись</h4>';
