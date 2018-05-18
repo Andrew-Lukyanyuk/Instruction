@@ -7,26 +7,23 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<script type="text/javascript">autentification();</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> 
 <link rel="stylesheet" href="main.css">
 
 <!-- +++++++++++++++++++Шапка+++++++++++++++++++ -->
 
 <div class="navbar bg-info navbar-inverse navbar-fixed-top">
 	<div class="container">
-		
-		<span id="idClock" style="display: none;"></span>
+		<!--<a href=pages/time.html target="blank"><div class="btn btn-primary btn-sm support"  id="time"> Облік часу</div></a>-->
 		<a href=pages/instruction.html target="blank"><div class="btn btn-primary btn-sm support"  id="instruction"> Посадова інструкція</div></a>
 		<div class="btn btn-primary btn-sm support" onclick="HelpBase()" id="support">Тех-підтримка</div>
 		<div class="menu">
-			
 			<div class="menu-header">Стандартні операції</div>
 			<ul>
 				<li><a href="pages/opticalLink.html" target="blank">Перевірка лінка по оптоволокну</a></li>
 				<li><a href="pages/settingRouter.html" target="blank">Налаштування роутера,<br> підключеного через LAN-порт</a></li>
-				<!--<li><a href="wan.html" target="blank">Налаштування роутера,<br> підключеного через WAN-порт</a></li>-->
 				<li><a href="pages/pppoe.html" target="blank">Налаштування PPPoE</a></li>
 				<li><a href="pages/netcard.html" target="blank">Налаштування мережевої карти</a></li>
 				<li><a href="pages/ubnt.html" target="blank">Перевірка налаштувань антени UBNT</a></li>
@@ -39,36 +36,22 @@
 </div>
 
 <center>
-<p id=tipbase></p> <p id="tip0"></p> <p id="tip01"></p>
- <p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tipNoAccess"></p> <p id="tipNoAccessChoose"></p> <p id="tip1311"></p> <p id="tip1312"></p> 				<p id="tip132"></p> <p id="tip141"></p> <p id="tip1411"></p>  <p id="tip142"></p> <p id="tip151"></p> <p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p> <p id="tip191"></p>
+
+<!-- Параграфи по мірі їх появи на сторінці.  -->
+<p id=tipbase></p> <p id="tip0"></p> <p id="tip01"></p> <p id="tip1"></p> <p id="tip2"></p> <p id="tip121"></p> <p id="tip131"></p> <p id="tipNoAccess"></p> <p id="tipNoAccessChoose"></p> <p id="tip1311"></p> <p id="tip1312"></p> 	<p id="tip132"></p> <p id="tip141"></p> <p id="tip1411"></p>  <p id="tip142"></p> <p id="tip151"></p> <p id="tip1511"></p> <p id="tip15111"></p> <p id="tip15112"></p> <p id="tip161"></p> <p id="tip1611"></p> <p id="tip16111"></p> <p id="tip171"></p> <p id="tip181"></p> <p id="tip191"></p>
 </center>
 
 <script language="JavaScript">
 
 var RED="#ab0918";
 
-function Clock()
-{
-    var tekDate = new Date();
-    var hour = tekDate.getHours();
-    var minute = tekDate.getMinutes();
-    var seconds = tekDate.getSeconds();
-    minute=((minute < 10) ? "0" : "") + minute;
-    seconds =((seconds < 10) ? "0" : "") + seconds;
-    hour=(hour > 24) ? hour-24 : hour;
-    hour=(hour == 0) ? 0 : hour;
-    var clock = hour + ":" + minute + ":" + seconds;
-    if(clock != document.getElementById('idClock').innerHTML){ 
-			document.getElementById('idClock').innerHTML = clock;
-	}
-    timer = setTimeout("Clock()",1000);
-}
-Clock();
-
+//Кнопка "Тех-підтримка"
 function HelpBase(txt) {
 	document.getElementById("tipbase").innerHTML='<p><b><h4>Перевірити дані клієнта</h4></b></p><p><a onclick="Billing()" id="link01">Лінк в біллінг</a> | <a onclick="Surname()" id="link02">Прізвище</a> | <a onclick="NoData()" id="link03">Дані відсутні</a></p><p id="tip0"></p> <p id="tip01"></p><hr>';
 }
 
+//Функції згортання відкритих параграфів від першого 'tipbase' до останнього 'tip191'
+//Згортають свій параграф та всі, які розташовані нижче нього
 function baseandLow(txt){
 	document.getElementById('tipbase').innerHTML='';
 t0andLow();
@@ -179,7 +162,7 @@ function t181andLow(txt){
 	document.getElementById('tip191').innerHTML = '';
 }
 
-
+//Функція кнопки "Згорнути"
 function Collapse(txt) {
 	baseandLow();
 	document.getElementById("link01").style.color = "";
@@ -191,7 +174,7 @@ function Collapse(txt) {
 }
 
 
-
+//Перевірити дані клієнта-"лінк в білінг"
 function Billing(txt){
 	document.getElementById('tip0').innerHTML='<p><h4>Вислухати звернення абонента</h4></p><p> <a onclick="Help1()" id="link11">Відсутність зв\'язку</a> |<a onclick="HelpLoSpeed()" id="link12"> Низька швидкість </a>| <a onclick="Help3()" id="link13">Інше</a></p>';
 	t01andLow();
@@ -199,6 +182,7 @@ function Billing(txt){
 	document.getElementById("link02").style.color = "";
 	document.getElementById("link03").style.color = "";
 }
+//Перевірити дані клієнта-"прізвище"
 function Surname(txt){
 	document.getElementById('tip0').innerHTML='<h4>Уточнити чи прізвище абонента відповідає тому, що оператор бачить на дисплеї телефону</h4> <p> <a onClick="Respond()" id=link021>Відповідає</a> | <a onClick="NotRespond()" id=link022>Не відповідає</a> </p>';
 	t01andLow();
@@ -206,6 +190,7 @@ function Surname(txt){
 	document.getElementById("link02").style.color = RED;
 	document.getElementById("link03").style.color = "";
 }
+//Перевірити дані клієнта-"нема даних"
 function NoData(txt){
 	document.getElementById('tip0').innerHTML='<h4>Спитати прізвище абонента і за якою адресою підключено інтернет. Здійснити пошук за<br>прізвищем і адресою та перейти на "<a onclick=Billing() id=nodata>Лінк в біллінг</a>"</h4>';
 	t01andLow();
@@ -213,18 +198,20 @@ function NoData(txt){
 	document.getElementById("link02").style.color = "";
 	document.getElementById("link03").style.color = RED;
 }
+//Перевірити дані клієнта - прізвище - "відповідає"
 function Respond(txt){
 	document.getElementById('tip01').innerHTML='<h4>Здійснити пошук за номером телефона та перейти на "<a onclick=Billing() id=billing>Лінк в білінг</a>"</h4>';
 	document.getElementById("link021").style.color = RED;
 	document.getElementById("link022").style.color = "";
 }
+//Перевірити дані клієнта - прізвище - "не відповідає"
 function NotRespond(txt){
 	document.getElementById('tip01').innerHTML='<h4>Перейти на "<a onclick=NoData() id=notrespond>Дані відсутні</a>"</h4>';
 	document.getElementById("link021").style.color = "";
 	document.getElementById("link022").style.color = RED;
 }
 
-
+//Перевірити дані клієнта - лінк в біллінг - "відсутність зв*язку"
 function Help1(txt){
 	document.getElementById('tip1').innerHTML='<h4>Перевірити стан рахунку</h4>';
 	document.getElementById('tip2').innerHTML='<a onClick="Help121()" href=#tip1 id=link21>Є кошти</a> | <a onClick="Help122()" href=#tip1 id=link22>Нема коштів</a>';
@@ -233,12 +220,13 @@ function Help1(txt){
 	document.getElementById("link12").style.color = "";
 	document.getElementById("link13").style.color = "";
 }
+//Перевірити дані клієнта - лінк в біллінг - відсутність зв*язку - є кошти
 function Help121(txt){document.getElementById('tip121').innerHTML='<h4>Перевірити стан підключення</h4><p href=#tip131 id=tip121><a onClick="Help131()" href=#tip131 id=link31>Онлайн</a> | <a onClick="Help132()" href=#tip131 id=link32>Сесія завершена</a> | <a onClick="Help133()" href=#tip131 id=link33>Нема даних</a></p>';
 	t131andLow();
 	document.getElementById("link21").style.color = RED;
 	document.getElementById("link22").style.color = "";
 }
-	// --------------------------------------Низька швидкість-------------------------------------------
+//Перевірити дані клієнта - лінк в біллінг - низька швидкість
 function HelpLoSpeed(txt){
 	document.getElementById('tip1').innerHTML='<p> <h4>Скопіювати MAC-адресу з білінгу. За нею здійснити пошук в Юзерсайді</h4><br><p><video width="600" controls>	<source src="video/lospeed.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></p><br> Якщо в білінгу вказано, що це GEPON, або якщо пошук за MAC-адресою видає результи типу OLT ... epon0/... , то прейти  за лінком "Пасивна оптична мережа (PON)"<br><br><img src=img/radio.png><br>Якщо в білінгу вказано, що цей абонент користується радіозвязком, то прейти  за лінком "Радіозв\'язок" <br>Якщо наявність пасивної оптичної мережі або радіозвязку не встановлено, то перейти за лінком "Все інше"<br> <a onclick="lowSpeedPon()" href=#tip2 id=link14 >Пасивна оптична мережа (PON)</a> | <a onclick="lowSpeedRadio()" href=#tip2 id=link15>Радіозв\'язок </a> | <a onclick=allOther() href=#tip2 id=link16 >Bсе інше</a> </p>';
 	t2andLow();
@@ -246,7 +234,7 @@ function HelpLoSpeed(txt){
 	document.getElementById("link12").style.color = RED;
 	document.getElementById("link13").style.color = "";
 }
-
+//Перевірити дані клієнта - лінк в біллінг - низька швидкість - Пасивна оптична мережа (PON)
 function lowSpeedPon(txt){
 	document.getElementById('tip2').innerHTML='Знайти список пристроїв, підключених до відповідного оптичного лінійного термінала і подивитись рівень сигнала до абонента, що скаржиться.<br> Низькі сигнали (-29 і менше) виділені червоним. У такому випадку <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. ';
 	t121andLow();
@@ -255,6 +243,7 @@ function lowSpeedPon(txt){
 	document.getElementById("link16").style.color = "";
 }
 
+//Перевірити дані клієнта - лінк в біллінг - низька швидкість - Радіозв'язок 
 function lowSpeedRadio(txt){
 	document.getElementById('tip2').innerHTML='<center>Отримати ІР антени абонента в білінгу. За цією адресою перейти на веб-інтерфейс антени.<br><h4><a href=pages/ubnt.html target="blank">Налаштування антени</a></h4> Перевірити рівень сигнала. Якщо рівень сигнала -69 і гірше (підсвічено червоним), то <a href=pages/userside.html target="blank">зареєструвати заявку на ремонт</a> і передати відповідному виконавцю. Інакше перейти в пункт "<a onclick=allOther() href=#tip2 >Все інше</a>".</center>';
 	t121andLow();
@@ -263,6 +252,7 @@ function lowSpeedRadio(txt){
 	document.getElementById("link16").style.color = "";
 }
 
+//Перевірити дані клієнта - лінк в біллінг - низька швидкість - Bсе інше
 function allOther(txt){
 	document.getElementById('tip2').innerHTML='<h4>На основі MAC-адреси останнього підключення визначити наявність роутера</h4> <p> <a onclick="HelpLoSpeedRouter()" href=#tip121 id=link23>Роутер є</a> |<a onClick="HelpLoSpeedNoRouter()" href=#tip121 id=link24> Нема роутера</a></p>';
 	t121andLow();
@@ -271,6 +261,7 @@ function allOther(txt){
 	document.getElementById("link16").style.color = RED;
 }
 
+//Перевірити дані клієнта - лінк в біллінг - низька швидкість - Bсе інше - Роутер є 
 function HelpLoSpeedRouter(txt){	
 	document.getElementById('tip121').innerHTML=' Попросити абонента набрати в браузері сайт 172.20.0.6<br> Якщо сайт доступний, то скачати файл Argocom.exe за лінком "Швидка підтримка" <br> Переставити кабель з WAN-порта (він зазвичай синій) напряму в мережеву карту<br> <h4><a href=pages/conectionSpeed.html target="blank">Діагностика швидкості зв\'язку</a></h4>Якщо сайт недоступний, то одразу переставити інтернет-кабель у мережеву карту та перейти за лінком <h4><a href=pages/conectionSpeed.html target="blank">Діагностика швидкості зв\'язку</a></h4>';
 	t131andLow();
@@ -278,6 +269,7 @@ function HelpLoSpeedRouter(txt){
 	document.getElementById("link24").style.color = "";
 }
 
+//Перевірити дані клієнта - лінк в біллінг - низька швидкість - Bсе інше - Нема роутера
 function HelpLoSpeedNoRouter(txt){	
 	document.getElementById('tip121').innerHTML=' <h4><a href=pages/conectionSpeed.html id="speed" target="blank">Діагностика швидкості звя\'зку</a></h4>';
 	t131andLow();
@@ -285,154 +277,7 @@ function HelpLoSpeedNoRouter(txt){
 	document.getElementById("link24").style.color = RED;
 }
 
-function NoAccess(txt){ 
-	document.getElementById('tip1311').innerHTML = '<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="WindowsXP()" id=link4C>Windows XP</a> | <a onClick="Windows7()" id=link4D>Windows 7</a> | <a onClick="Windows8()" id=link4E>Windows 8/8.1</a> | <a onClick="Windows10()" id=link4F>Windows 10</a><p/>';
-	document.getElementById('tip2').innerHTML='';
-	document.getElementById('tip121').innerHTML='';
-	document.getElementById('tip131').innerHTML='';
-	document.getElementById('tipNoAccessChoose').innerHTML='Якщо 172.20.0.6. недоступний';
-	t1311andLow();
-	document.getElementById("tipNoAccessChoose").style.color = RED;
-}
-/*
-function WindowsXP(txt){
-	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYesXP()" id=link4A>Так</a> | <a onClick="IPNoXP()" id=link4B>Ні</a></p>';
-	document.getElementById('tip1411').innerHTML='';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4C").style.color = RED;
-	document.getElementById("link4D").style.color = "";
- 	document.getElementById("link4E").style.color = "";
-	document.getElementById("link4F").style.color = "";
-
-}
-function IPYesXP(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function IPNoXP(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisibleXP()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisibleXP()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function MACvisibleXP(txt){
-	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Зайти в "Пуск", натиснути правою кнопкою на "Панель Управління" та вибрати "Відкрити"<br><br>Зайти в "Мережа та підключення до інтернету" >> "Мережеві підключення".<br><br> В лівій верхній частині вікна у вкладці "Мережеві задачі" вибрати пункт "Створення нового підключення"<br><br>Відкриється "Майстер нових підключень", натиснути кнопку "Далі"<br><br> Послідовно вибрати "Підключитись до інтернету" >> "Встановити підключення вручну" >> "Через постійне високошвидкісне підключення" та натиснути "Готово"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function MACNotvisibleXP(txt){
-	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-
-function Windows7(txt){
-	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYes()" id=link4A>Так</a> | <a onClick="IPNo()" id=link4B>Ні</a></p>';
-	document.getElementById('tip1411').innerHTML='';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4C").style.color = "";
-	document.getElementById("link4D").style.color = RED;
- 	document.getElementById("link4E").style.color = "";
-	document.getElementById("link4F").style.color = "";
-
-}
-function IPYes(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function IPNo(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function MACvisible(txt){
-	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function MACNotvisible(txt){
-	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-
-function Windows8(txt){
-	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYes8()" id=link4A>Так</a> | <a onClick="IPNo8()" id=link4B>Ні</a></p>';
-	document.getElementById('tip1411').innerHTML='';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4C").style.color = "";
-	document.getElementById("link4D").style.color = "";
- 	document.getElementById("link4E").style.color = RED;
-	document.getElementById("link4F").style.color = "";
-
-}
-function IPYes8(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function IPNo8(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible8()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible8()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function MACvisible8(txt){
-	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути правою кнопкою на "Пуск" та зайти в "Панель Управління"<br><br>Далі послідовно вибрати "Мережа та інтернет" >> "Центр управління мережами та спільним доступом"<br><br>"Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати пункт "Підключення до інтернету" та натиснути "Далі"<br><br>"Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль та придумати назву підключення<br><br>Натиснути кнопку "Підключитись"<p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function MACNotvisible8(txt){
-	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-
-function Windows10(txt){
-	document.getElementById('tip141').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="IPYes10()" id=link4A>Так</a> | <a onClick="IPNo10()" id=link4B>Ні</a></p>';
-	document.getElementById('tip1411').innerHTML='';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4C").style.color = "";
-	document.getElementById("link4D").style.color = "";
- 	document.getElementById("link4E").style.color = "";
-	document.getElementById("link4F").style.color = RED;
-
-
-}
-function IPYes10(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function IPNo10(txt){
-	document.getElementById('tip1411').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="MACvisible10()" href=#tip151 id=link5F>MAC-адресy  видно</a> | <a onClick="MACNotvisible10()" href=#tip151 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById('tip151').innerHTML='';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function MACvisible10(txt){
-	document.getElementById('tip151').innerHTML='<h4>Попросити абонента :</h4><p>Правою кнопкою миші натиснути на "Пуск" та зайти в "Панель Управління">><br><br>"Мережа та інтернет">> "Центр управління мережами та спільним доступом" >> "Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати "Підключення до інтернету та натиснути "Далі" <br><br> "Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль, придумати назву підключення та натиснути "Підключити"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function MACNotvisible10(txt){
-	document.getElementById('tip151').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-*/
-
-
-
-	// --------------------------------------Сесія завершена-------------------------------------------
-	
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена	
 function Help132(txt){
 	document.getElementById('tip131').innerHTML='<h4>Скопіювати МАС-адресу останнього підключення, вставити її в пошук програми Userside<br> та з\'ясувати спосіб підключення</h4><p><img src="img/mac.png"></p><p><img src="img/userside.png"></p> <p id=tip131, align="center"><a onClick="Help1321()" href=#tip132 id=link43>ОЛТ через PON-порт</a> |<a onClick="Help1322()" href=#tip132 id=link44> G-порт </a>|<a onClick="HelpbaseRadio()" href=#tip132 id=link45> Базова станція </a>|<a onClick="HelpSwitch()" href=#tip132 id=link46> Switch </a></p>';
 	t132andLow();
@@ -440,6 +285,8 @@ function Help132(txt){
 	document.getElementById("link32").style.color = RED;
 	document.getElementById("link33").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Нема даних	
 function Help133(txt){
 	document.getElementById('tip131').innerHTML='<h4>Спитати у абонента чи він використовує роутер</h4> <p><a onClick="Help133Router()" id=link47>Роутер є</a> | <a onClick="Help133NoRouter()" id=link48>Роутера нема</a></p>';
 	t132andLow();
@@ -447,30 +294,40 @@ function Help133(txt){
 	document.getElementById("link32").style.color = "";
 	document.getElementById("link33").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Нема даних	- Роутер є
 function Help133Router(txt){
 	document.getElementById('tip132').innerHTML='<h4>Попросити назвати МАС-адресу, записану на звороті і підключити кабель у LAN-порт<br>Перевірити чи видно цю МАС-адресу в програмі Userside</h4><p><a onClick="MAC_Visible()" href=#tip141 id=link5D>Видно</a> | <a onClick="MAC_NotVisible()" href=#tip141 id=link5E>Не видно</a></p>';
 	t141andLow();
 	document.getElementById("link47").style.color = RED;
 	document.getElementById("link48").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Нема даних	- Роутер є - Видно
 function MAC_Visible(txt){
 	document.getElementById('tip141').innerHTML='<h4><a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>';
 	t151andLow();
 	document.getElementById("link5D").style.color = RED;
 	document.getElementById("link5E").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Нема даних	- Роутер є - Не видно
 function MAC_NotVisible(txt){
 	document.getElementById('tip141').innerHTML='<h4>Попросити абонента переставити кабель напряму в комп\'ютер</h4><h4><a href=pages/pppoe.html target="blank">Налаштування РРРоЕ </a></h4>';
 	t151andLow();
 	document.getElementById("link5D").style.color = "";
 	document.getElementById("link5E").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Нема даних	- Роутера нема
 function Help133NoRouter(txt){
 	document.getElementById('tip132').innerHTML='<h4><a href=pages/pppoe.html target="blank">Налаштування РРРоЕ</a></h4><br>';
 	t141andLow();
 	document.getElementById("link47").style.color = "";
 	document.getElementById("link48").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - ОЛТ через PON-порт 
 function Help1321(txt){
 	document.getElementById('tip132').innerHTML='<h4>В програмі Userside зайти в список PON-інтерфейсів і перевірити лінк по оптиці<br>до конкретного абонента</h4> <p id=tip131><a onClick="Help1331()" href=#tip141 id=link55> Лінк є </a>| <a onClick="Help1332()" href=#tip141 id=link56>Лінку нема </a></p>';
 	t141andLow();
@@ -479,158 +336,39 @@ function Help1321(txt){
 	document.getElementById("link45").style.color = "";
 	document.getElementById("link46").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - ОЛТ через PON-порт - Лінк є
 function Help1331(txt){
 	document.getElementById('tip141').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4> <p id=tip141> <a onClick="Help1341()" href=#tip151 id=link69>Роутер є</a> | <a onClick="Help1342()" href=#tip151 id=link6A>Нема роутера</a> </p>';
 	t151andLow();
 	document.getElementById("link55").style.color = RED;
 	document.getElementById("link56").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - ОЛТ через PON-порт - Лінк є - Роутер є
 function Help1341(txt){
 	document.getElementById('tip151').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт та<br> <a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>';
 	t161andLow();
 	document.getElementById("link69").style.color = RED;
 	document.getElementById("link6A").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - ОЛТ через PON-порт - Лінк є - Нема роутера
 function Help1342(txt){
 	document.getElementById('tip151').innerHTML='<h4><a href=pages/pppoe.html target="blank"> Налаштування PPPoE</a></h4>';
 	t161andLow();
  	document.getElementById("link69").style.color = "";
 	document.getElementById("link6A").style.color = RED;
 }
-/*
-function OLTSiteNoAccess(txt){
-	document.getElementById('tip161').innerHTML='<h4>Уточнити яка операційна система у абонента</h4><p><a onClick="OLTWindowsXP()" href=#tip171 id=link85>Windows XP</a> | <a onClick="OLTWindows7()" href=#tip171 id=link86>Windows 7</a> | <a onClick="OLTWindows8()" href=#tip171 id=link87>Windows 8/8.1</a> | <a onClick="OLTWindows10()" href=#tip171  id=link88>Windows 10</a><p/>';
-	t171andLow();
-	document.getElementById("link7G").style.color = RED;
-}
-function OLTWindowsXP(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", навести курсор на "Панель Управління" клацнути правою кнопкою миші та вибрати "Відкрити"</p><p>В розділі "Мережа та підключення до інтернету" >> "Мережеві підключення"</p>Клацнути правою кнопкою миші на "Підключення по локальній мережі". В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні вибрати вкладку "Підтримка" та натиснути кнопку "Подробиці" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYesXP()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNoXP()" href=#tip181 id=link4B>Ні</a></p>';
-	t181andLow();
-	document.getElementById("link85").style.color = RED;
-	document.getElementById("link86").style.color = "";
- 	document.getElementById("link87").style.color = "";
-	document.getElementById("link88").style.color = "";
 
-}
-function OLTIPYesXP(txt){
-	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function OLTIPNoXP(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisibleXP()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisibleXP()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function OLTMACvisibleXP(txt){
-	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function OLTMACNotvisibleXP(txt){
-	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-
-function OLTWindows7(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути кнопку "Пуск", зайти в "Панель Управління"</p><p>В розділі "Мережа та інтернет" вкладка "Центр управління мережами та спільним доступом"</p><p>Зверху зліва натиснути вкладку "Змінити параметри адаптера"</p><p>У вікні що з\'явилось знайти "Підключення по локальній мережі" або "Ethernet"<br> і натиснути на ньому праву кнопку</p><p>В контекстному меню вибрати пункт "Властивості"</p><p>У вікні, що з\'явилось знайти "Протокол інтернета TCP/IP 4", вибрати його і ще раз натиснути кнопку властивості</p><p>У новому вікні вибрати "Отримати ІР автоматично" і "Отримати DNS автоматично", натиснути "ОК" і закрити вікно</p><p>Натиснути праву кнопку на "Підключення по локальній мережі" і зайти у "Стан"</p><p>У новому вікні натиснути кнопку "Докладно" і попросити абонента продиктувати фізичну адресу та ІР з цього вікна</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes7()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo7()" href=#tip181 id=link4B>Ні</a></p>';
-	t181andLow();
-	document.getElementById("link85").style.color = "";
-	document.getElementById("link86").style.color = RED;
- 	document.getElementById("link87").style.color = "";
-	document.getElementById("link88").style.color = "";
-}
-function OLTIPYes7(txt){
-	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip191').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function OLTIPNo7(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible7()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible7()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function OLTMACvisible7(txt){
-	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути "Пуск" та зайти в "Панель Управління" у вкладці "Мережі та інтернет" вибрати "Центр управління мережами та спільним доступом"</p><p>Вибрати послідовно пункти : "Підключення до інтернета" - "Всеодно створити нове підключення"- "РРРоЕ"</p><p>Ввести ім\'я користувача та пароль та натиснути кнопку "Підключитись"</p><p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function OLTMACNotvisible7(txt){
-	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-
-function OLTWindows8(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Натиснути правою кнопкою миші на "Пуск" та зайти в "Панель Управління"<br><br>"Мережа та інтернет" >> "Центр управління мережею та спільним доступом"<br><br>У вехній лівій частині вікна "Змінити параметри адаптера"<br><br>У вікні, що відкрилось натиснути правою кнопкою на значку мережі та зайти в меню "Стан"<br><br>Натиснути кнопку "Відомості" та продиктувати фізичну адресу та адресу "IPv4"<p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes8()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo8()" href=#tip181 id=link4B>Ні</a></p>';
-	t181andLow();
-	document.getElementById("link85").style.color = "";
-	document.getElementById("link86").style.color = "";
- 	document.getElementById("link87").style.color = RED;
-	document.getElementById("link88").style.color = "";
-}
-function OLTIPYes8(txt){
-	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip191').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function OLTIPNo8(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible8()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible8()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById('tip191').innerHTML='';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function OLTMACvisible8(txt){
-	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Натиснути правою кнопкою на "Пуск" та зайти в "Панель Управління"<br><br>Далі послідовно вибрати "Мережа та інтернет" >> "Центр управління мережами та спільним доступом"<br><br>"Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати пункт "Підключення до інтернету" та натиснути "Далі"<br><br>"Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль та придумати назву підключення<br><br>Натиснути кнопку "Підключитись"<p>Після цього має з\'явитись з\'єднання з інтернетом</p><p>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function OLTMACNotvisible8(txt){
-	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-
-function OLTWindows10(txt){
-	document.getElementById('tip171').innerHTML='<h4>Запропонувати виконати такі дії :</h4><p>Правою кнопкою миші натиснути на "Пуск" та вибрати "Панель Управління" >> "Мережа та інтернет"</p><p>"Центр управління мережею та спільним доступом", зліва зверху "Змінити параметри адаптера"</p><p>У вікні, що відкриється натиснути правою кнопкою на "Мережа" та вибрати пункт меню "Стан" >> "Властивості"</p><p>В списку компонентів вибрати "ІР версії 4(ТСР/ІР)" та натиснути кнопку "Властивості"</p><p>У вкладці "Загальні" вибрати "Отримати ІР-адресу автоматично" та "Отримати DNS-адресу автоматично" та натиснути "ОК"</p><p>У попередньому вікні "Стан" натиснути кнопку "Відомості" та продиктувати фізичну і ІР-адресу</p><p><h4>Якщо IP-адреса починається з 169.254...</h4></p><p><a onClick="OLTIPYes10()" href=#tip181 id=link4A>Так</a> | <a onClick="OLTIPNo10()" href=#tip181 id=link4B>Ні</a></p>';
-	t181andLow();
-	document.getElementById("link85").style.color = "";
-	document.getElementById("link86").style.color = "";
- 	document.getElementById("link87").style.color = "";
-	document.getElementById("link88").style.color = RED;
-}
-function OLTIPYes10(txt){
-	document.getElementById('tip181').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById('tip191').innerHTML='';
-	document.getElementById("link4A").style.color = RED;
-	document.getElementById("link4B").style.color = "";
-}
-function OLTIPNo10(txt){
-	document.getElementById('tip181').innerHTML='<h4>Перевірити чи видно продиктовану МАС-адресу в програмі Userside</h4><p><a onClick="OLTMACvisible10()" href=#tip191 id=link5F>MAC-адресy  видно</a> | <a onClick="OLTMACNotvisible10()" href=#tip191 id=link5G>MAC-адресy не видно</a></p>';
-	document.getElementById('tip191').innerHTML='';
-	document.getElementById("link4A").style.color = "";
-	document.getElementById("link4B").style.color = RED;
-}
-function OLTMACvisible10(txt){
-	document.getElementById('tip191').innerHTML='<h4>Попросити абонента :</h4><p>Правою кнопкою миші натиснути на "Пуск" та зайти в "Панель Управління">><br><br>"Мережа та інтернет">> "Центр управління мережами та спільним доступом" >> "Створення і налаштування нового підключення або мережі"<br><br>У вікні, що відкриється вибрати "Підключення до інтернету та натиснути "Далі" <br><br> "Всеодно створити нове підключення" >> "Високошвидкісне з РРРоЕ"<br><br>Ввести ім\'я користувача, пароль, придумати назву підключення та натиснути "Підключити"<br><br>Після цього має з\'явитись з\'єднання з інтернетом<br><br>Якщо з\'єднання з\'явилось - завершити розмову</p> ';
-	document.getElementById("link5F").style.color = RED;
-	document.getElementById("link5G").style.color = "";
-}
-function OLTMACNotvisible10(txt){
-	document.getElementById('tip191').innerHTML='<h4>Зареєструвати заявку на ремонт та передати відповідному монтажнику</h4>';
-	document.getElementById("link5F").style.color = "";
-	document.getElementById("link5G").style.color = RED;
-}
-*/
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - ОЛТ через PON-порт - Лінку нема
 function Help1332(txt){
 	document.getElementById('tip141').innerHTML='<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати відповідальній особі</a></h4>';
 	t151andLow();
 	document.getElementById("link55").style.color = "";
 	document.getElementById("link56").style.color = RED;
 }
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - G-порт 
 function Help1322(txt){
 	document.getElementById('tip132').innerHTML='<a onClick="Help13222()" href=#tip141 id=link57>Ще один ОЛТ(PON)</a> | <a onClick="Help13221()" href=#tip141 id=link58>Медіаконвертер</a>';
 	t141andLow();
@@ -639,55 +377,39 @@ function Help1322(txt){
 	document.getElementById("link45").style.color = "";
 	document.getElementById("link46").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - G-порт - Медіаконвертер
 function Help13221(txt){
 	document.getElementById('tip141').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4> <p> <a onClick="Help13231()" href=#tip151 id=link6D>Роутер є</a> |<a onClick="Help13232()" href=#tip151 id=link6E> Нема роутера</a> </p>';
 	t151andLow();
 	document.getElementById("link57").style.color = "";
 	document.getElementById("link58").style.color = RED;		
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - G-порт - Медіаконвертер - Роутер є
 function Help13231(txt){
 	document.getElementById('tip151').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт<br> <a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>';
 	document.getElementById("link6D").style.color = RED;
 	document.getElementById("link6E").style.color = "";	
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - G-порт - Медіаконвертер - Нема роутера
 function Help13232(txt){
 	document.getElementById('tip151').innerHTML='<h4><a href=pages/pppoe.html target="blank">Налаштування PPPoE</a></h4>';
 	document.getElementById('tip161').innerHTML = '';
 	document.getElementById("link6D").style.color = "";
 	document.getElementById("link6E").style.color = RED;	
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - G-порт - Ще один ОЛТ(PON)
 function Help13222(txt){
 	document.getElementById('tip141').innerHTML='<h4><a onclick="Help1321()" id=gport >Перейти в ОЛТ через PON-порт</a> </h4>';
 	t151andLow();
 	document.getElementById("link57").style.color = RED;
 	document.getElementById("link58").style.color = "";	
 }
-/*function Help13223(txt){
-	document.getElementById('tip151').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4> <p> <a onClick="Help13224()" href=#tip1511 id=link7D>Роутер є</a> | <a onClick="Help13225()" href=#tip1511 id=link7E> Нема роутера</a></p>';
-	t1511andLow();
-	document.getElementById("link6B").style.color = RED;
-	document.getElementById("link6C").style.color = "";	
-}
-function Help13233(txt){
-	document.getElementById('tip151').innerHTML='<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати відповідальній особі</a></h4>';
-	t1511andLow();
-	document.getElementById("link6B").style.color = "";
-	document.getElementById("link6C").style.color = RED;	
-}
 
-function Help13224(txt){
-	document.getElementById('tip1511').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт <br> <a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>';
-	t161andLow();
-	document.getElementById("link7D").style.color = RED;
-	document.getElementById("link7E").style.color = "";	
-}
-function Help13225(txt){
-	document.getElementById('tip1511').innerHTML='<h4><a href=pages/pppoe.html target="blank">Налаштування PPPoE</a></h4>';
-	t161andLow();
-	document.getElementById("link7D").style.color = "";
-	document.getElementById("link7E").style.color = RED;	
-}
-*/
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Базова станція 
 function HelpbaseRadio(txt){
 	document.getElementById('tip132').innerHTML='<h4>Віддалено зайти на базову станцію радіообладнання, перeвірити налаштування та при<br>потребі відновити їх. Перевірити наявність радіолінку до абонента</h4> <p><a onClick="HelpLink()" id=link59> Лінк є </a>|<a onClick="HelpNoLink()" id=link5A> Лінку нема </a></p>';
 	t141andLow();
@@ -696,18 +418,24 @@ function HelpbaseRadio(txt){
 	document.getElementById("link45").style.color = RED;
 	document.getElementById("link46").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Базова станція - Лінк є
 function HelpLink(txt){
 	document.getElementById('tip141').innerHTML='<h4><a href=pages/ubnt.html target="blank">Віддалено зайти на антену клієнта та налаштувати PPPoE</a></h4>';
 	t1511andLow();
 	document.getElementById("link59").style.color = RED;
 	document.getElementById("link5A").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Базова станція - Лінку нема
 function HelpNoLink(txt){
 	document.getElementById('tip141').innerHTML='<h4><a href=pages/userside.html target="blank"> Зареєструвати заявку на відновлення зв\'язку та передати відповідальній особі</a></h4>';
 	t151andLow();
 	document.getElementById("link59").style.color = "";
 	document.getElementById("link5A").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Switch
 function HelpSwitch(txt){
 	document.getElementById('tip132').innerHTML='<h4>Перевірити порт до якого востаннє під\'єднувався абонент і якщо порт<br>не працює, то перезапустити</h4><p><a onClick="HelpPortWork()" href=#tip141 id=link5B> Порт працює </a>|<a onClick="HelpPortNotwrk()" href=#tip141 id=link5C> Порт не працює </a></p>';
 	t141andLow();
@@ -716,55 +444,70 @@ function HelpSwitch(txt){
 	document.getElementById("link45").style.color = "";
 	document.getElementById("link46").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Switch - Порт не працює
 function HelpPortNotwrk(txt){
 	document.getElementById('tip141').innerHTML='<h4><a href=pages/userside.html target="blank">Зареєструвати заявку та передати інженеру другого рівня</a></h4>';
 	t151andLow();
 	document.getElementById("link5B").style.color = "";
 	document.getElementById("link5C").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Switch - Порт працює
 function HelpPortWork(txt){
 	document.getElementById('tip141').innerHTML='<h4>На основі MAC-адреси визначити наявність роутера</h4><p><a onClick="HelpRouter()" href=#tip151 id=link6F> Роутер є </a>|<a onClick="HelpNoRouter()" href=#tip151 id=link6G> Нема роутера</a></p>';
 	t151andLow();
 	document.getElementById("link5B").style.color = RED;
 	document.getElementById("link5C").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Switch - Порт працює - Роутер є
 function HelpRouter(txt){
 	document.getElementById('tip151').innerHTML='<h4>Попросити абонента переставити кабель в LAN-порт та <br><a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>';
 	t1511andLow();
 	document.getElementById("link6F").style.color = RED;
 	document.getElementById("link6G").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Сесія завершена - Switch - Порт працює - Нема роутера
 function HelpNoRouter(txt){
 	document.getElementById('tip151').innerHTML='<h4><a href=pages/pppoe.html target="blank">Налаштування РРРоЕ</a></h4>';
 	t1511andLow();
 	document.getElementById("link6F").style.color = "";
 	document.getElementById("link6G").style.color = RED;
 }
-//--------------------------------------------------------------------------------------------------------
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Нема коштів
 function Help122(txt){
 	document.getElementById('tip121').innerHTML='<h4>Повідомити абонента про відсутність коштів та переключити на фінансовий відділ</h4>';
 	t131andLow();
 	document.getElementById("link21").style.color = "";
 	document.getElementById("link22").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн
 function Help131(txt){document.getElementById('tip131').innerHTML='<h4>Повідомити абонента, що він на звя\'зку і отримати підтвердження</h4><p><a onClick="Help141()" href=#tip141  id=link41>На зв\'язку</a> | <a onClick="Help142()" href=#tip141 id=link42>Не на зв\'язку</a></p>';
 	t132andLow();
 	document.getElementById("link31").style.color = RED;
 	document.getElementById("link32").style.color = "";
 	document.getElementById("link33").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - На зв'язку
 function Help141(txt){
 	document.getElementById('tip141').innerHTML='<h4>Подякувати і попрощатись</h4>';
 	t142andLow();
 	document.getElementById("link41").style.color = RED;
 	document.getElementById("link42").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку
 function Help142(txt) { document.getElementById('tip141').innerHTML = '<h4>Перевірити тип підключення</h4><p href=#tip151 id=tip142><a onClick="Help151()" href=#tip151 id=link51>PON</a> | <a onClick="Help152()" href=#tip151 id=link52>FTTH</a> | <a onClick="Help153()" href=#tip151 id=link53>Radio</a> | <a onClick="Help154()" href=#tip151 id=link54>Ethernet</a></p>';
 	document.getElementById("link41").style.color = "";
 	document.getElementById("link42").style.color = RED;
  }
 
-	//Ethernet
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet
 function Help154(txt) {
 	document.getElementById('tip151').innerHTML = '<h4>За МАС-адресою останнього підключення визначити наявність роутера</h4><p> <a onClick="Help164()" href=#tip1511 id=link67>Роутер є</a> | <a onClick="Help1643()" href=#tip1611 id=link68>Нема роутера</a></p>';
 	t1511andLow();
@@ -773,20 +516,28 @@ function Help154(txt) {
 	document.getElementById("link53").style.color = "";
 	document.getElementById("link54").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Роутер є
 function Help164(txt) {
 	document.getElementById('tip1511').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p> <a onClick="Help1641()" href=#tip161 id=link79>Доступ є</a> | <a onClick="Help1642()" href=#tip161 id=link7A>Доступу нема</a> </p>';
 	t161andLow();
 	document.getElementById("link67").style.color = RED;
 	document.getElementById("link68").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Роутер є - Доступ є
 function Help1641(txt) { document.getElementById('tip161').innerHTML = '<h4><a href=pages/settingRouter.html target="blank">Здійснити віддалене налаштування внутрішньої мережі</a></h4>';
 	document.getElementById("link79").style.color = RED;
 	document.getElementById("link7A").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Роутер є - Доступу нема
 function Help1642(txt) { document.getElementById('tip161').innerHTML = '<h4>Попросити абонента переставити кабель в LAN-порт<br> <a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>';
 	document.getElementById("link79").style.color = "";
 	document.getElementById("link7A").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Нема роутера
 function Help1643(txt) {
 	t1511andLow();
 	document.getElementById('tip1611').innerHTML = '<h4>Попросити абонента відключити VPN та PROXY</h4> <p> <a onClick="Help16431()" href=#tip16111 id=link7B>Допомогло</a> | <a onClick="Help16432()" href=#tip16111 id=link7C>Не допомогло</a> </p>';
@@ -794,26 +545,34 @@ function Help1643(txt) {
 	document.getElementById("link67").style.color = "";
 	document.getElementById("link68").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Нема роутера - Допомогло
 function Help16431(txt) {
 	document.getElementById('tip16111').innerHTML = '<h4>Подякувати та порощатись</h4>'; 
 	t171andLow();
 	document.getElementById("link7B").style.color = RED;
 	document.getElementById("link7C").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Нема роутера - Не допомогло
 function Help16432(txt) { document.getElementById('tip16111').innerHTML = '<h4>Перевірити, чи час початку сесії більший за 3 місяці</h4><p><a onClick="Help174()" href=#tip171 id=link83>Більший за 3 місяці</a> | <a onClick="Help1741()" href=#tip171 id=link84>Менший за 3 місяці</a></p>';
 	document.getElementById("link7B").style.color = "";
 	document.getElementById("link7C").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Нема роутера - Не допомогло - Більший за 3 місяці
 function Help174(txt) { document.getElementById('tip171').innerHTML = '<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати завдання інженеру другого рівня</a></h4>';
 	document.getElementById("link83").style.color = RED;
 	document.getElementById("link84").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Ethernet - Нема роутера - Не допомогло - Менший за 3 місяці
 function Help1741(txt) { document.getElementById('tip171').innerHTML = '<h4>Попросити абонента перезавантажити комп\'ютер<br>Якщо не допомогло, то<br><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт</a></p></h4>';
 	document.getElementById("link83").style.color = "";
 	document.getElementById("link84").style.color = RED;
 }
 
-	//Radio
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Radio
 function Help153(txt) {
 	document.getElementById('tip151').innerHTML = '<h4>За МАС-адресою останнього підключення визначити як налаштована антена</h4><p> <a onClick="Help163()" href=#tip1511 id=link65>Як bridge</a> | <a onClick="Help1631()" href=#tip1511 id=link66>Як роутер</a> </p>';
 	t1511andLow();
@@ -822,16 +581,20 @@ function Help153(txt) {
 	document.getElementById("link53").style.color = RED;
 	document.getElementById("link54").style.color = "";
 }
-	function Help163(txt) { document.getElementById('tip15111').innerHTML = '<h4>Передати завдання інженеру другого рівня</h4>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Radio - Як bridge
+function Help163(txt) { document.getElementById('tip15111').innerHTML = '<h4>Передати завдання інженеру другого рівня</h4>';
 	document.getElementById("link65").style.color = RED;
 	document.getElementById("link66").style.color = "";
 	}
-	function Help1631(txt) { document.getElementById('tip15111').innerHTML = '<h4><a href=pages/ubnt.html target="blank">Здійснити віддалене налаштування антени</a></h4>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - Radio - Як роутер
+function Help1631(txt) { document.getElementById('tip15111').innerHTML = '<h4><a href=pages/ubnt.html target="blank">Здійснити віддалене налаштування антени</a></h4>';
 	document.getElementById("link65").style.color = "";
 	document.getElementById("link66").style.color = RED;
 	}
 
-	//FTTH
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH
 function Help152(txt) {
 	document.getElementById('tip151').innerHTML = '<h4>За МАС-адресою останнього підключення визначити наявність роутера</h4><p><a onClick="Help162()" href=#tip15112 id=link63>Роутер є</a> | <a onClick="Help1621()" href=#tip161 id=link64>Нема роутера</a></p>'; 
 	t1511andLow();
@@ -840,38 +603,50 @@ function Help152(txt) {
 	document.getElementById("link53").style.color = "";
 	document.getElementById("link54").style.color = "";
 }
-	function Help162(txt) { document.getElementById('tip15112').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p><a onClick="Help172()" href=#tip161 id=link75>Доступ є</a> | <a onClick="Help1721()" href=#tip1611 id=link76>Доступу нема</a> </p>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH - Роутер є 
+function Help162(txt) { document.getElementById('tip15112').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4> <p><a onClick="Help172()" href=#tip161 id=link75>Доступ є</a> | <a onClick="Help1721()" href=#tip1611 id=link76>Доступу нема</a> </p>';
 	t161andLow();
 	document.getElementById("link63").style.color = RED;
 	document.getElementById("link64").style.color = "";	
 	 }
-	function Help1621(txt) { 
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH - Нема роутера
+function Help1621(txt) { 
 	t15112andLow();
 	document.getElementById('tip161').innerHTML = '<h4>Попросити абонента відключити VPN та PROXY</h4><p><a onClick="Help16211()" href=#tip1611 id=link77>Допомогло</a> | <a onClick="Help16212()" href=#tip1611 id=link78>Не допомогло</a> </p>';
-	
 	document.getElementById("link63").style.color = "";
 	document.getElementById("link64").style.color = RED;
 	}
-	function Help16211(txt) { document.getElementById('tip1611').innerHTML = '<h4>Подякувати та порощатись</h4>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH - Нема роутера - Допомогло
+function Help16211(txt) { document.getElementById('tip1611').innerHTML = '<h4>Подякувати та порощатись</h4>';
 	document.getElementById("link77").style.color = RED;
 	document.getElementById("link78").style.color = "";	
 	}
-	function Help16212(txt) { document.getElementById('tip1611').innerHTML = '<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати завдання інженеру другого рівня</a></h4>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH - Нема роутера - Не допомогло
+function Help16212(txt) { document.getElementById('tip1611').innerHTML = '<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати завдання інженеру другого рівня</a></h4>';
 	document.getElementById("link77").style.color = "";
 	document.getElementById("link78").style.color = RED;	
 	}
-	function Help172(txt) {
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH - Роутер є - Доступ є
+function Help172(txt) {
 		document.getElementById('tip161').innerHTML = '<h4>Здійснити віддалений доступ та<br> <a href=pages/wan.html target="blank">Hалаштувати роутер внутрішньої мережі</a></h4>';
 		document.getElementById('tip1611').innerHTML = '';
 		document.getElementById("link75").style.color = RED;
 		document.getElementById("link76").style.color = "";		
 	}
-	function Help1721(txt) { document.getElementById('tip1611').innerHTML = '<h4>Попросити абонента переставити кабель в LAN-порт<br> <a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>'; 
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку -  FTTH - Роутер є - Доступу нема
+function Help1721(txt) { document.getElementById('tip1611').innerHTML = '<h4>Попросити абонента переставити кабель в LAN-порт<br> <a href=pages/settingRouter.html target="blank">Здійснити віддалене підключення та налаштувати роутер внутрішньої мережі</a></h4>'; 
 		document.getElementById('tip161').innerHTML = '';
 		document.getElementById("link75").style.color = "";
 		document.getElementById("link76").style.color = RED;	
 	}
-	//PON
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON
 function Help151(txt){
 	document.getElementById('tip151').innerHTML='<h4>За останньою МАС-адресою визначити наявність роутера</h4><p><a onClick="Help161()" href=#tip161 id=link61>Роутер є</a> | <a onClick="Help1611()" href=#tip161 id=link62>Нема роутера</a></p>';
 	t1511andLow();
@@ -880,68 +655,82 @@ function Help151(txt){
 	document.getElementById("link53").style.color = "";
 	document.getElementById("link54").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Роутер є
 function Help161(txt) {
 	document.getElementById('tip161').innerHTML = '<h4>Перевірити наявність віддаленого доступу</h4><p id=tip161><a onClick="Help171()" href=#tip171 id=link71>Доступ є</a> | <a onClick="Help1711()" href=#tip171 id=link72>Доступу нема</a></p>';
 	t1611andLow();
 	document.getElementById("link61").style.color = RED;
 	document.getElementById("link62").style.color = "";
 }
-	function Help1611(txt) {
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера
+function Help1611(txt) {
 		t161andLow();
 		document.getElementById('tip1611').innerHTML = '<h4>Попросити абонента відключити VPN та PROXY</h4><p id=1611><a onClick="Help16111()" href=#tip16111 id=link73>Допомогло</a> | <a onClick="Help16112()" href=#tip16111 id=link74>Не допомогло</a></p>';
 	
 		document.getElementById("link61").style.color = "";
 		document.getElementById("link62").style.color = RED;
 	}
-	function autentification(){
-	var password = prompt("Please enter password");
-	while (password!="correct")
-	{
-		password = prompt("Wrong password please enter again");
-	}
-	}
 
-	var password = prompt("Please enter password");
-	while (password!="correct")
-	{
+// Встановлення пароля на вхід
+var password = prompt("Please enter password");
+		while (password!="correct")
 		password = prompt("Wrong password please enter again");
-	}
-	function Help16111(txt) {
+	
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера - Допомогло
+function Help16111(txt) {
 		document.getElementById('tip16111').innerHTML = '<h4>Подякувати та попрощатись</h4>';
 		t171andLow();
 		document.getElementById("link73").style.color = RED;
 		document.getElementById("link74").style.color = "";
 	}
- 	function Help16112(txt) { document.getElementById('tip16111').innerHTML = '<h4>Перевірити, чи час початку сесії більший за 3 місяці</h4><p><a onClick="Help161121()" href=#tip171   id=link81>Більший за 3 місяці</a> | <a onClick="Help161122()" href=#tip171 id=link82>Менший за 3 місяці</a></p>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера - Не допомогло
+function Help16112(txt) { document.getElementById('tip16111').innerHTML = '<h4>Перевірити, чи час початку сесії більший за 3 місяці</h4><p><a onClick="Help161121()" href=#tip171   id=link81>Більший за 3 місяці</a> | <a onClick="Help161122()" href=#tip171 id=link82>Менший за 3 місяці</a></p>';
  		document.getElementById("link73").style.color = "";
 		document.getElementById("link74").style.color = RED;
 	}
- 	function Help161121(txt) {
+ 
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера - Не допомогло - Більший за 3 місяці
+ function Help161121(txt) {
  		document.getElementById('tip171').innerHTML = '<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати завдання інженеру другого рівня</a></h4>';
  		document.getElementById('tip181').innerHTML = '';
 		document.getElementById("link81").style.color = RED;
 		document.getElementById("link82").style.color = "";
 	}
- 	function Help161122(txt) { document.getElementById('tip171').innerHTML = '<h4>Перевірити, чи рівень сигналу в нормі</h4><p> <a onClick="Help182()" href=#tip181 id=link91>В нормі</a> | <a onClick="Help181()" href=#tip181 id=link92>Низький</a> </p>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера - Не допомогло - Менший за 3 місяці
+function Help161122(txt) { document.getElementById('tip171').innerHTML = '<h4>Перевірити, чи рівень сигналу в нормі</h4><p> <a onClick="Help182()" href=#tip181 id=link91>В нормі</a> | <a onClick="Help181()" href=#tip181 id=link92>Низький</a> </p>';
  		document.getElementById("link81").style.color = "";
 		document.getElementById("link82").style.color = RED;
 	}
- 	function Help181(txt) { document.getElementById('tip181').innerHTML = '<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати завдання інженеру другого рівня</a></h4>'; 
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера - Не допомогло - Менший за 3 місяці - Низький
+function Help181(txt) { document.getElementById('tip181').innerHTML = '<h4><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати завдання інженеру другого рівня</a></h4>'; 
 		document.getElementById("link91").style.color = "";
 		document.getElementById("link92").style.color = RED;
  	}
- 	function Help182(txt) { document.getElementById('tip181').innerHTML = '<h4>Повідомити абонента, що рівень сигналу в нормі та попросити перезавантажити комп\'ютер<br> Якщо не допомогло, то <br><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати відповідальній особі</a></h4>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Нема роутера - Не допомогло - Менший за 3 місяці - В нормі
+function Help182(txt) { document.getElementById('tip181').innerHTML = '<h4>Повідомити абонента, що рівень сигналу в нормі та попросити перезавантажити комп\'ютер<br> Якщо не допомогло, то <br><a href=pages/userside.html target="blank">Зареєструвати заявку на ремонт та передати відповідальній особі</a></h4>';
 		document.getElementById("link91").style.color = RED;
 		document.getElementById("link92").style.color = "";
  	}
-	function Help171(txt) { document.getElementById('tip171').innerHTML = '<h4>Здійснити віддалений доступ та<br> <a href=pages/wan.html target="blank">Hалаштувати роутер внутрішньої мережі</a></h4>';
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Роутер є - Доступ є
+function Help171(txt) { document.getElementById('tip171').innerHTML = '<h4>Здійснити віддалений доступ та<br> <a href=pages/wan.html target="blank">Hалаштувати роутер внутрішньої мережі</a></h4>';
 	document.getElementById("link71").style.color = RED;
 	document.getElementById("link72").style.color = "";
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Відсутність зв'язку - Є кошти - Онлайн - Не на зв'язку - PON - Роутер є - Доступу нема
 	function Help1711(txt) { document.getElementById('tip171').innerHTML = '<h4>Попросити абонента переставити кабель в LAN-порт і <a href=pages/settingRouter.html target="blank"><br>Здійснити віддалене налаштування роутера</a></h4>';
 	document.getElementById("link71").style.color = "";
 	document.getElementById("link72").style.color = RED;
 }
+
+//Перевірити дані клієнта - лінк в біллінг - Інше
 function Help3(txt){
 	document.getElementById('tip1').innerHTML='<h4>Переключити на відповідальну особу</h4>';
 	t2andLow();
