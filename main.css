@@ -1,7 +1,11 @@
 @font-face {
-   font-family: 'Noto Sans', sans-serif;
-   }
-body {font-family: "Noto Sans UI"}   
+	font-family: "Noto Sans UI";
+	src:url(fonts/NotoSansUI-Regular.ttf) format("truetype");
+}
+
+body {
+	font-family: 'Noto Sans UI','Noto Sans', serif;
+}   
 #link01, #link02, #link03, #link021, #link022, #link33, 
 #link11, #link12, #link13, #link14, #link15, #link16, #link21, #link22, #link23, #link24,
 #link31, #link32, #link41, #link42, #link43, #link44, #link45,
@@ -16,7 +20,9 @@ body {font-family: "Noto Sans UI"}
 #billing, #notrespond, #nodata, #netpppoe, #speed1, #speed2, #speed3, #speed4, #speed5, #speed6, #speed7  {
 	 cursor:pointer; color:#006fd0; font-size: 15px; text-decoration: none;
 }
-
+.navbar>.container, .navbar>.container-fluid {
+     flex-wrap: nowrap;
+ }
 .container {
 	height: 0px;
 }
